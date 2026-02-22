@@ -1,0 +1,581 @@
+.container {
+  /* contact */
+  &#contactPage {
+    padding-top: 10.7rem;
+    .contact_info {
+      padding: 3rem 0 12rem;
+      .content_wrap {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+        .info_wrap {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          min-height: 45rem;
+          .txt_wrap {
+            margin-top: 1rem;
+            color: #15181e;
+            .sub_tit {
+              margin-bottom: 1rem;
+              font-size: 2.4rem;
+              font-weight: $bold;
+              line-height: 2.8rem;
+              letter-spacing: -0.02em;
+            }
+            .sub_desc {
+              font-size: 1.8rem;
+              font-weight: $medium;
+              line-height: 3rem;
+              letter-spacing: -0.02em;
+            }
+            .btn_contact_modal {
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              align-items: center;
+              transition: all 0.4s;
+              width: 18.8rem;
+              height: 5.6rem;
+              margin-top: 4.4rem;
+              background-color: $black;
+              border-radius: 1rem;
+              font-size: 1.8rem;
+              font-weight: $semiBold;
+              color: $white;
+              &::after {
+                content: "";
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                background: url(../images/sub/contact/ic_arrow_white.svg)
+                  no-repeat center/cover;
+              }
+              &:hover {
+                background-color: #474747;
+              }
+            }
+          }
+          .info_list {
+            max-width: 96.4rem;
+            margin-top: auto;
+            border-top: 0.1rem solid rgba($color: $black, $alpha: 0.1);
+            li {
+              display: flex;
+              align-items: center;
+              padding: 2rem 0;
+              border-bottom: 0.1rem solid rgba($color: $black, $alpha: 0.1);
+              .sort {
+                width: 22.2rem;
+                font-size: 1.5rem;
+                font-weight: $semiBold;
+                letter-spacing: -0.01em;
+                color: #b6b6b6;
+              }
+              .detail {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                font-size: 1.6rem;
+                font-weight: $medium;
+                letter-spacing: -0.01em;
+                color: #0f111a;
+                word-break: keep-all;
+                .btn_instagram {
+                  display: flex;
+                  gap: 0.6rem;
+                  align-items: center;
+                  &::after {
+                    flex-shrink: 0;
+                    content: "";
+                    display: block;
+                    width: 2rem;
+                    height: 2rem;
+                    background: url(../images/sub/contact/ic_arrow_diagonal.svg)
+                      no-repeat center/cover;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .map_wrap {
+          max-width: 57.6rem;
+          width: 38%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .contact_modal_box {
+      overflow: hidden;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      padding: 3rem;
+      background-color: rgba($color: $black, $alpha: 0.2);
+      .contact_box {
+        overflow-y: auto;
+        position: relative;
+        max-width: 99.8rem;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        padding: 0 5rem 4rem;
+        background-color: $white;
+        border-radius: 2rem;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        .tit_wrap {
+          display: flex;
+          justify-content: space-between;
+          position: sticky;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          padding: 4rem 0 5.6rem;
+          background-color: $white;
+          .tit {
+            font-size: 4.4rem;
+            font-weight: $bold;
+            letter-spacing: -0.02em;
+          }
+          .btn_close {
+            display: block;
+            width: 2.7rem;
+            height: 2.7rem;
+            background: url(../images/sub/contact/ic_close.svg) no-repeat
+              center/cover;
+          }
+        }
+        .contact_info_list {
+          .list_item {
+            padding-bottom: 4.8rem;
+            border-bottom: 0.1rem solid #eaeaea;
+            ~ .list_item {
+              padding-top: 3.2rem;
+            }
+            .essential {
+              color: #ee3744;
+            }
+            .txt_info {
+              margin-bottom: 2.4rem;
+              .num {
+                margin-bottom: 0.8rem;
+                font-size: 1.5rem;
+                font-weight: $bold;
+                line-height: 1.9rem;
+                letter-spacing: -0.02em;
+                color: #b6b6b6;
+              }
+              .tit {
+                font-size: 2.4rem;
+                font-weight: $bold;
+                line-height: 3.1rem;
+                letter-spacing: -0.02em;
+                color: #111111;
+              }
+              .desc {
+                display: flex;
+                gap: 2rem;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 1.2rem;
+                font-size: 1.5rem;
+                letter-spacing: -0.02em;
+                color: #111111;
+              }
+            }
+            .label_txt {
+              margin: 3.2rem 0 1.2rem;
+              font-size: 1.5rem;
+              font-weight: $semiBold;
+              letter-spacing: -0.02em;
+              color: #111111;
+            }
+            .radio_wrap {
+              display: flex;
+              gap: 0.8rem;
+              flex-wrap: wrap;
+              .radio_group {
+                width: calc(50% - 0.4rem);
+                input[type="radio"] {
+                  display: none;
+                  &:checked {
+                    ~ label {
+                      background-color: $black;
+                      color: $white;
+                    }
+                  }
+                }
+                label {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+                  height: 6rem;
+                  background-color: #f0f0f0;
+                  border-radius: 0.8rem;
+                  font-size: 1.6rem;
+                  font-weight: $semiBold;
+                  letter-spacing: -0.02em;
+                  color: #0f111a;
+                }
+              }
+            }
+            .input_wrap {
+              display: flex;
+              gap: 2rem;
+              flex-wrap: wrap;
+              margin-top: 5rem;
+              .input_group {
+                width: calc(50% - 1rem);
+                label {
+                  display: block;
+                  margin-bottom: 1.2rem;
+                  font-size: 1.5rem;
+                  font-weight: $semiBold;
+                  letter-spacing: -0.02em;
+                  color: #111111;
+                }
+                input {
+                  width: 100%;
+                  height: 6rem;
+                  padding: 0 2.6rem;
+                  background-color: $white;
+                  border: 0.1rem solid #eaeaea;
+                  border-radius: 0.8rem;
+                  font-size: 1.5rem;
+                  letter-spacing: -0.02em;
+                  &::placeholder {
+                    color: #b8b8b8;
+                  }
+                }
+              }
+            }
+            .etc_input_wrap {
+              margin-top: 2.2rem;
+              label {
+                display: block;
+                margin-bottom: 1.2rem;
+                font-size: 1.5rem;
+                font-weight: $semiBold;
+                letter-spacing: -0.02em;
+                color: #111111;
+              }
+              input {
+                display: block;
+                width: 100%;
+                height: 6rem;
+                padding: 0 2.8rem;
+                background-color: $white;
+                border: 0.1rem solid #eaeaea;
+                border-radius: 0.8rem;
+                font-size: 1.5rem;
+                letter-spacing: -0.02em;
+                &::placeholder {
+                  color: #b8b8b8;
+                }
+              }
+            }
+            .textarea_group {
+              label {
+                display: block;
+                margin: 4.8rem 0 1.2rem;
+                font-size: 1.5rem;
+                font-weight: $semiBold;
+                letter-spacing: -0.02em;
+                color: #111111;
+              }
+              textarea {
+                display: block;
+                width: 100%;
+                height: 20rem;
+                padding: 2.4rem 2.8rem;
+                background-color: $white;
+                border: 0.1rem solid #eaeaea;
+                border-radius: 0.8rem;
+                font-size: 1.5rem;
+                line-height: 2.3rem;
+                letter-spacing: -0.02em;
+                &::placeholder {
+                  color: #b8b8b8;
+                }
+              }
+            }
+            .checkbox_wrap {
+              margin-top: 2rem;
+              .checkbox_desc_box {
+                overflow: hidden;
+                width: 100%;
+                background-color: #f9f9f9;
+                border: 0.1rem solid #f1f1f1;
+                border-radius: 1rem;
+                .checkbox_tit {
+                  width: 100%;
+                  height: 5rem;
+                  padding: 1.6rem 2.6rem;
+                  border-bottom: 0.1rem solid #eaeaea;
+                  font-size: 1.5rem;
+                  font-weight: $semiBold;
+                  letter-spacing: -0.02em;
+                  color: #111111;
+                  .essential {
+                    margin-left: 0.4rem;
+                  }
+                }
+                .scroll_box {
+                  overflow-y: auto;
+                  height: 13.8rem;
+                  padding: 2.4rem 3rem;
+                  font-size: 1.5rem;
+                  font-weight: $medium;
+                  line-height: 2.6rem;
+                  letter-spacing: -0.01em;
+                  color: #a2a2a2;
+                  &::-webkit-scrollbar {
+                    display: none;
+                  }
+                }
+              }
+              .checkbox_group {
+                margin-top: 2rem;
+                input[type="checkbox"] {
+                  display: none;
+                  &:checked {
+                    ~ label {
+                      &::before {
+                        background: url(../images/sub/contact/ic_checkbox_active.svg)
+                          no-repeat center/cover;
+                        border: none;
+                      }
+                    }
+                  }
+                }
+                label {
+                  display: flex;
+                  gap: 0.4rem;
+                  align-items: center;
+                  font-size: 1.5rem;
+                  font-weight: $semiBold;
+                  letter-spacing: -0.02em;
+                  color: #111111;
+                  &::before {
+                    flex-shrink: 0;
+                    content: "";
+                    display: block;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-right: 0.8rem;
+                    border: 0.1rem solid #dcdcdc;
+                    border-radius: 0.3rem;
+                  }
+                }
+              }
+            }
+          }
+          .btn_submit {
+            display: flex;
+            gap: 0.9rem;
+            justify-content: center;
+            align-items: center;
+            width: 29.8rem;
+            height: 5.6rem;
+            margin: 3.2rem 0 5rem auto;
+            background-color: $black;
+            border-radius: 1rem;
+            font-size: 1.8rem;
+            font-weight: $semiBold;
+            color: $white;
+            &::after {
+              content: "";
+              display: block;
+              width: 2rem;
+              height: 2rem;
+              background: url(../images/sub/contact/ic_arrow_white.svg)
+                no-repeat center/cover;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .contact_info {
+        .content_wrap {
+          flex-direction: column-reverse;
+          .map_wrap {
+            max-width: none;
+            width: 100%;
+          }
+          .info_wrap {
+            .txt_wrap {
+              text-align: right;
+              .btn_contact_modal {
+                margin-left: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .common_tit_wrap {
+        padding-bottom: 5.2rem;
+      }
+      .contact_info {
+        padding: 1.5rem 0 10rem;
+        .content_wrap {
+          gap: 3.4rem;
+          .info_wrap {
+            min-height: auto;
+            .txt_wrap {
+              margin-top: 0;
+              .sub_tit {
+                margin-bottom: 0.5rem;
+                padding-right: 0.8rem;
+                font-size: 1.8rem;
+              }
+              .sub_desc {
+                padding-right: 0.8rem;
+                font-size: 1.5rem;
+                line-height: 2.5rem;
+                letter-spacing: -0.04em;
+              }
+              .btn_contact_modal {
+                gap: 0.5rem;
+                width: 100%;
+                height: 6rem;
+                margin-top: 5.4rem;
+                border-radius: 0.8rem;
+                font-size: 1.6rem;
+                letter-spacing: -0.02em;
+              }
+            }
+            .info_list {
+              margin-top: 4rem;
+              li {
+                justify-content: space-between;
+                padding: 1.6rem 1rem;
+                .sort {
+                  width: auto;
+                }
+                .detail {
+                  flex: auto;
+                  flex-direction: column-reverse;
+                  justify-content: flex-end;
+                  max-width: 22rem;
+                  width: 100%;
+                  font-size: 1.5rem;
+                  line-height: 2.2rem;
+                  text-align: right;
+                  .txt {
+                    opacity: 0.3;
+                  }
+                  .btn_instagram {
+                    justify-content: flex-end;
+                    font-size: 1.4rem;
+                    font-weight: $bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .contact_modal_box {
+        padding: 8rem 1.5rem 2rem;
+        .contact_box {
+          padding: 0 2rem 2rem;
+          .tit_wrap {
+            padding: 2.4rem 0 1.8rem;
+            .tit {
+              padding-top: 1.2rem;
+              font-size: 3rem;
+            }
+            .btn_close {
+              width: 1.6rem;
+              height: 1.6rem;
+            }
+          }
+          .contact_info_list {
+            .list_item {
+              padding-top: 3rem;
+              padding-bottom: 3rem;
+              ~ .list_item {
+                padding-top: 3rem;
+              }
+              .txt_info {
+                margin-bottom: 2rem;
+                .tit {
+                  font-size: 2rem;
+                  line-height: 2.6rem;
+                }
+                .desc {
+                  display: block;
+                  line-height: 2.3rem;
+                  .essential_txt {
+                    display: none;
+                  }
+                }
+              }
+              .input_wrap {
+                margin-top: 3.6rem;
+                gap: 3rem;
+                flex-direction: column;
+                .input_group {
+                  width: 100%;
+                }
+              }
+              .textarea_group {
+                label {
+                  margin-top: 3rem;
+                }
+                textarea {
+                  height: 16rem;
+                  padding: 2.4rem 2rem;
+                  font-size: 1.4rem;
+                }
+              }
+              .checkbox_wrap {
+                .checkbox_desc_box {
+                  .checkbox_tit {
+                    height: auto;
+                    padding: 1.6rem 2rem;
+                  }
+                  .scroll_box {
+                    height: 11.3rem;
+                    padding: 1.8rem 2rem;
+                    font-size: 1.4rem;
+                    line-height: 2.3rem;
+                  }
+                }
+              }
+            }
+            .btn_submit {
+              gap: 0.5rem;
+              width: 100%;
+              height: 6rem;
+              margin: 6rem 0 0;
+              border-radius: 0.8rem;
+              font-size: 1.6rem;
+              letter-spacing: -0.02em;
+              &::after {
+                width: 1.6rem;
+                height: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

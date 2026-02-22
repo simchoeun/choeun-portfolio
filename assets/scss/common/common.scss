@@ -1,0 +1,111 @@
+@import "_mixin";
+@import "_variable";
+@import "font";
+
+html,
+body {
+  background-color: #1f1f1f;
+  font-size: 62.5%;
+  line-height: 1;
+  color: $white;
+}
+body {
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 10rem;
+  }
+}
+
+.blind {
+  @include blind;
+}
+
+.pc_hidden {
+  display: none !important;
+}
+
+.mo_hidden {
+  display: block !important;
+}
+
+:root {
+  --vh: 1vh;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
+
+  .content_wrap {
+    position: relative;
+    max-width: 176rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 6rem;
+  }
+
+  input,
+  textarea {
+    font-family: "SUIT", sans-serif;
+  }
+
+  .mask {
+    overflow: hidden;
+  }
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  [data-aos="fade-up"] {
+    transform: translate3d(0, 30px, 0) !important;
+  }
+  [data-aos^="fade"][data-aos^="fade"].aos-animate {
+    transform: translateZ(0) !important;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 10rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    .content_wrap {
+      .logo_txt {
+        font-size: 3rem;
+        font-weight: $bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pc_hidden {
+    display: block !important;
+  }
+
+  .mo_hidden {
+    display: none !important;
+  }
+
+  #wrap {
+    .content_wrap {
+      padding: 0 2rem;
+    }
+  }
+}

@@ -1,0 +1,1633 @@
+.container {
+  &.teachers {
+    padding-left: 30.6rem;
+    .content_wrap {
+      max-width: 144.6rem;
+      width: 100%;
+      padding: 0 1.6rem;
+      margin: auto;
+    }
+
+    /* leaveOfAbsence */
+    &#leaveOfAbsence {
+      margin-bottom: 6.3rem;
+      .absence_wrap {
+        margin-top: 4rem;
+        .content_wrap {
+          .absence_box {
+            padding: 2rem 2rem 2.4rem;
+            background-color: #f7f8fc;
+            border-radius: 1rem;
+            .info_wrap {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              position: relative;
+              margin-bottom: 2rem;
+              padding-bottom: 2rem;
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -2rem;
+                bottom: 0;
+                width: calc(100% + 4rem);
+                height: 0.1rem;
+                background-color: #f0f0f0;
+              }
+              .tit {
+                font-size: 1.8rem;
+                font-weight: $semiBold;
+              }
+              .btn_wrap {
+                display: flex;
+                gap: 0.6rem;
+                .btn_request {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 11.8rem;
+                  height: 4.7rem;
+                  background-color: $white;
+                  border: 0.1rem solid $point;
+                  border-radius: 0.6rem;
+                  font-size: 1.8rem;
+                  font-weight: $medium;
+                  color: $point;
+                }
+              }
+            }
+            .table_wrap {
+              overflow-x: auto;
+              table {
+                width: 100%;
+                border-spacing: 0 1rem;
+                border-collapse: separate;
+                thead {
+                  tr {
+                    th {
+                      padding: 0 2rem 0.4rem;
+                      font-size: 1.4rem;
+                      font-weight: $medium;
+                      letter-spacing: -0.02em;
+                      color: #707070;
+                      text-align: center;
+                      &.submitted_date {
+                        text-align: left;
+                      }
+                    }
+                  }
+                }
+                tbody {
+                  tr {
+                    background-color: $white;
+                    td {
+                      padding: 1.2rem 2rem;
+                      font-size: 1.4rem;
+                      color: #707070;
+                      letter-spacing: -0.02em;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      text-align: center;
+                      &:first-child {
+                        padding-left: 2.8rem;
+                        border-radius: 0.6rem 0 0 0.6rem;
+                        text-align: left;
+                      }
+                      &:last-child {
+                        border-radius: 0 0.6rem 0.6rem 0;
+                      }
+                      &.reason, &.confirmed_date, &.confirmed_day {
+                        font-weight: $medium;
+                        color: #262626;
+                      }
+                      &.status {
+                        span {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          width: 9rem;
+                          height: 2.2rem;
+                          margin: auto;
+                          border-radius: 2rem;
+                          font-size: 1.2rem;
+                          font-weight: $medium;
+                          &.submit {
+                            background-color: #EDEDED;
+                            color: #C1C1C1;
+                          }
+                          &.under_review {
+                            background-color: #E3F290;
+                            color: #658D01;
+                          }
+                          &.confirm {
+                            background-color: #E0EDFF;
+                            color: $point;
+                          }
+                          &.declined {
+                            background-color: #FCCBCB;
+                            color: #E41D1D;
+                          }
+                        }
+                      }
+                      &.request_form {
+                        .btn_details {
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          width: 3.2rem;
+                          height: 3.2rem;
+                          margin: auto;
+                          background: #E0ECFF url(../images/teachers/performance/ic_arrow_popup.svg) no-repeat center;
+                          border-radius: 0.6rem;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .pagination {
+              margin-top: 2.4rem;
+            }
+            .mo_absence_box {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    /* payroll */
+    &#payroll {
+      margin-bottom: 10rem;
+      .year_month_wrap {
+        margin-top: 3rem;
+        .content_wrap {
+          .month_wrap {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+            .month_text {
+              font-size: 3.4rem;
+              font-weight: $bold;
+            }
+            .month_picker {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 3.3rem;
+              height: 3.3rem;
+              background: #F6F8FF url(../images/teachers/menegement/payroll_calendar.svg) no-repeat center;
+              border: 0.1rem solid #F6F8FF;
+              border-radius: 0.8rem;
+              font-size: 3.4rem;
+              font-weight: $bold;
+            }
+            .mo_month_picker {
+              display: none;
+            }
+            .flatpickr-calendar {
+              &.static {
+                top: calc(100% + 1rem);
+                width: 38.1rem;
+                border: 0.1rem solid #ececec;
+                border-radius: 0.8rem;
+                box-shadow: 0 0.8rem 2.4rem 0 rgba(0, 0, 0, 0.07);
+                &::before,
+                &::after {
+                  display: none;
+                }
+                .flatpickr-months {
+                  gap: 2rem;
+                  justify-content: center;
+                  align-items: center;
+                  height: 6rem;
+                  border-bottom: 0.1rem solid #f0f0f0;
+                  .flatpickr-month {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    max-width: 9.5rem;
+                    height: 100%;
+                    font-family: "Pretendard", sans-serif;
+                    font-size: 1.8rem;
+                    font-weight: $bold;
+                    color: #262626;
+                    .flatpickr-current-month {
+                      display: flex;
+                      gap: 0.4rem;
+                      flex-direction: row-reverse;
+                      align-items: center;
+                      width: 100%;
+                      height: 100%;
+                      padding: 0;
+                      font-family: "Pretendard", sans-serif;
+                      font-size: 1.8rem;
+                      font-weight: $bold;
+                      color: #262626;
+                      .numInputWrapper {
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        width: 6rem;
+                        height: 100%;
+                        padding: 0;
+                        input.cur-year {
+                          width: 100%;
+                          height: 100%;
+                          padding: 0;
+                          font-family: "Pretendard", sans-serif;
+                          font-size: 1.8rem;
+                          font-weight: $bold;
+                          color: #262626;
+                        }
+                        .arrowUp,
+                        .arrowDown {
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+                  .flatpickr-prev-month,
+                  .flatpickr-next-month {
+                    position: static;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    padding: 0;
+                    background: url(../images/sub/class/room_calender_arrow.svg)
+                      no-repeat center/cover;
+                    svg {
+                      display: none;
+                    }
+                  }
+                  .flatpickr-prev-month {
+                    transform: scaleX(-1);
+                  }
+                }
+                .flatpickr-monthSelect-months {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 1.2rem;
+                  margin: 0;
+                  padding: 3rem;
+                  .flatpickr-monthSelect-month {
+                    display: flex;
+                    align-items: center;
+                    width: calc((100% - 2.4rem) / 3);
+                    height: 4.5rem;
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    font-size: 1.6rem;
+                    font-weight: $semiBold;
+                    &.today {
+                      border: none;
+                    }
+                    &.selected {
+                      border: 0;
+                      background-color: $white;
+                      color: $point;
+                      font-weight: $bold;
+                      color: $point !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .month_list {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 0.1rem solid #F0F0F0;
+            li {
+              flex: 1;
+              display: flex;
+              justify-content: space-between;
+              flex-direction: column;
+              height: 11.1rem;
+              padding: 1.4rem 2rem 1.2rem 1.4rem;
+              background-color: #F7F8FC;
+              border: 0.1rem solid #F3F3F3;
+              border-radius: 1.2rem;
+              .type {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                width: max-content;
+                height: 2.5rem;
+                padding: 0 1rem;
+                background-color: #E1ECFF;
+                border-radius: 5.5rem;
+                font-size: 1.4rem;
+                font-weight: $semiBold;
+                color: $point;
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 1.3rem;
+                  height: 1.3rem;
+                  background: url(../images/teachers/menegement/payroll_clock.svg) no-repeat center/cover;
+                }
+              }
+              .num {
+                margin-left: auto;
+                font-size: 3rem;
+                font-weight: $bold;
+              }
+              &.total {
+                background-color: $point;
+                border-color: $point;
+                .num {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .class_detail {
+        margin-top: 3.2rem;
+        .content_wrap {
+          .tit_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            h3 {
+              font-size: 2.8rem;
+              font-weight: $bold;
+            }
+            .color_info {
+              display: flex;
+              gap: 2.8rem;
+              align-items: center;
+              background-color: #F7F8FC;
+              border-radius: 5.8rem;
+              height: 3.4rem;
+              padding: 0 1.4rem;
+              li {
+                display: flex;
+                gap: 0.6rem;
+                align-items: center;
+                font-size: 1.2rem;
+                font-weight: $medium;
+                color: #9B9B9B;
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 0.7rem;
+                  height: 0.7rem;
+                  border-radius: 50%;
+                }
+                &.blue {
+                  &::before {
+                    background-color: #175DF3;
+                  }
+                }
+                &.red {
+                  &::before {
+                    background-color: #FF4D2D;
+                  }
+                }
+              }
+            }
+          }
+          .table_wrap {
+            overflow-x: auto;
+            padding: 2rem;
+            background-color: #F7F8FC;
+            border-radius: 1rem;
+            table {
+              width: 100%;
+              border-collapse: separate;
+              thead {
+                tr {
+                  th {
+                    padding: 0.8rem;
+                    background-color: $white;
+                    border: 0.1rem solid #EAEAEA;
+                    border-right: none;
+                    &:first-child {
+                      border-radius: 0.7rem 0 0 0;
+                    }
+                    &:last-child {
+                      border-right: 0.1rem solid #EAEAEA;
+                      border-radius: 0 0.7rem 0 0;
+                    }
+                    span {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      height: 6.7rem;
+                      padding: 1rem 0.4rem;
+                      background-color: #F9F9F9;
+                      border-radius: 0.6rem;
+                      font-size: 1.4rem;
+                      font-weight: $medium;
+                      color: #707070;
+                      text-align: center;
+                    }
+                    &.course {
+                      span {
+                        padding: 1rem 2rem;
+                        justify-content: flex-start;
+                        text-align: left;
+                      }
+                    }
+                  }
+                }
+              }
+              tbody {
+                tr {
+                  background-color: $white;
+                  td {
+                    padding: 2rem 1rem;
+                    border-left: 0.1rem solid #EAEAEA;
+                    border-bottom: 0.1rem solid #EAEAEA;
+                    font-size: 1.4rem;
+                    font-weight: $medium;
+                    letter-spacing: -0.02em;
+                    color: #707070;
+                    text-align: center;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:last-child {
+                      border-right: 0.1rem solid #EAEAEA;
+                    }
+                    &.program {
+                      max-width: 17.8rem;
+                    }
+                    &.course {
+                      max-width: 31.8rem;
+                      padding-left: 2.8rem;
+                      font-weight: $semiBold;
+                      color: #262626;
+                      text-align: left;
+                    }
+                    &.class_code {
+                      &.blue {
+                        color: #175DF3;
+                      }
+                      &.red {
+                        color: #FF4D2D;
+                      }
+                    }
+                    &.status {
+                      .status_circle {
+                        display: block;
+                        width: 0.7rem;
+                        height: 0.7rem;
+                        margin: auto;
+                        border-radius: 50%;
+                        &.blue {
+                          background-color: #175DF3;
+                        }
+                        &.red {
+                          background-color: #FF4D2D;
+                        }
+                      }
+                    }
+                    &.course_participant {
+                      &.gray {
+                        color: #C2C2C2;
+                      }
+                    }
+                    &.hours_scheduled, &.hours_complete {
+                      padding-right: 2.8rem;
+                      text-align: right;
+                    }
+                  }
+                  &:hover {
+                    cursor: pointer;
+                    background-color: #F5F6F8;
+                    td {
+                      font-weight: $semiBold;
+                    }
+                  }
+                }
+              }
+              tfoot {
+                tr {
+                  td {
+                    height: 6rem;
+                    padding-right: 2rem;
+                    background-color: rgba($color: #E1ECFF, $alpha: 0.8);
+                    border-left: 0.1rem solid #D9E3F5;
+                    border-bottom: 0.1rem solid #D9E3F5;
+                    font-size: 1.4rem;
+                    font-weight: $bold;
+                    color: $point;
+                    text-align: right;
+                    &:first-child {
+                      border-radius: 0 0 0 0.7rem;
+                    }
+                    &:last-child {
+                      border-right: 0.1rem solid #D9E3F5;
+                      border-radius: 0 0 0.7rem 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .non_class_hours {
+        margin-top: 6rem;
+        .content_wrap {
+          .tit_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            h3 {
+              font-size: 2.8rem;
+              font-weight: $bold;
+            }
+          }
+          .table_wrap {
+            overflow-x: auto;
+            padding: 2rem;
+            background-color: #F7F8FC;
+            border-radius: 1rem;
+            table {
+              width: 100%;
+              border-collapse: separate;
+              thead {
+                tr {
+                  th {
+                    padding: 0.8rem;
+                    background-color: $white;
+                    border: 0.1rem solid #EAEAEA;
+                    border-right: none;
+                    &:first-child {
+                      border-radius: 0.7rem 0 0 0;
+                    }
+                    &:last-child {
+                      border-right: 0.1rem solid #EAEAEA;
+                      border-radius: 0 0.7rem 0 0;
+                    }
+                    span {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      height: 6.7rem;
+                      padding: 2rem;
+                      background-color: #F9F9F9;
+                      border-radius: 0.6rem;
+                      font-size: 1.4rem;
+                      font-weight: $medium;
+                      color: #707070;
+                      text-align: center;
+                    }
+                    &.qm, &.note {
+                      span {
+                        justify-content: flex-start;
+                        text-align: left;
+                      }
+                    }
+                  }
+                }
+              }
+              tbody {
+                tr {
+                  background-color: $white;
+                  td {
+                    padding: 2rem 2.8rem;
+                    border-left: 0.1rem solid #EAEAEA;
+                    border-bottom: 0.1rem solid #EAEAEA;
+                    font-size: 1.4rem;
+                    font-weight: $medium;
+                    letter-spacing: -0.02em;
+                    color: #707070;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    &:last-child {
+                      border-right: 0.1rem solid #EAEAEA;
+                    }
+                    &.note {
+                      font-weight: $semiBold;
+                      color: #262626;
+                    }
+                    &.hours {
+                      text-align: right;
+                    }
+                  }
+                  &:hover {
+                    cursor: pointer;
+                    background-color: #F5F6F8;
+                    td {
+                      font-weight: $semiBold;
+                    }
+                  }
+                }
+              }
+              tfoot {
+                tr {
+                  td {
+                    height: 6rem;
+                    padding-right: 2rem;
+                    background-color: rgba($color: #E1ECFF, $alpha: 0.8);
+                    border-left: 0.1rem solid #D9E3F5;
+                    border-bottom: 0.1rem solid #D9E3F5;
+                    font-size: 1.4rem;
+                    font-weight: $bold;
+                    color: $point;
+                    text-align: right;
+                    &:first-child {
+                      border-radius: 0 0 0 0.7rem;
+                    }
+                    &:last-child {
+                      border-right: 0.1rem solid #D9E3F5;
+                      border-radius: 0 0 0.7rem 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .memo_additional_notes {
+        .content_wrap {
+          .tit_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            padding-top: 4.4rem;
+            border-top: 0.1rem solid #F0F0F0;
+            h3 {
+              font-size: 2.8rem;
+              font-weight: $bold;
+            }
+          }
+          .memo_list {
+            li {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              background-color: #F7F8FC;
+              border-radius: 0.9rem;
+              ~ li {
+                margin-top: 1rem;
+              }
+              .txt_wrap {
+                flex: 1;
+                padding: 1.6rem;
+                border-right: 0.1rem solid #F1F1F1;
+                .name {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: max-content;
+                  height: 2.5rem;
+                  margin-bottom: 0.9rem;
+                  padding: 0 0.6rem;
+                  background-color: rgba($color: #E5E5ED, $alpha: 0.7);
+                  border-radius: 0.4rem;
+                  font-size: 1.4rem;
+                  font-weight: $semiBold;
+                  color: #51648E;
+                }
+                .memo_txt {
+                  margin-bottom: 1.3rem;
+                  font-size: 1.4rem;
+                  font-weight: $medium;
+                  color: #525252;
+                }
+                .date_wrap {
+                  display: flex;
+                  gap: 1.2rem;
+                  align-items: center;
+                  font-size: 1.2rem;
+                  font-weight: $medium;
+                  color: #999999;
+                  span {
+                    position: relative;
+                    &::after {
+                      opacity: 0.25;
+                      content: '';
+                      display: block;
+                      position: absolute;
+                      top: 0.2rem;
+                      right: -0.6rem;
+                      width: 0.1rem;
+                      height: 0.9rem;
+                      background-color: $point;
+                    }
+                    &:last-child {
+                      &::after {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+                .download_box {
+                  display: flex;
+                  gap: 1rem;
+                  flex-wrap: wrap;
+                  position: relative;
+                  padding-top: 3.6rem;
+                  &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 1.6rem;
+                    left: -1.6rem;
+                    width: calc(100% + 3.2rem);
+                    height: 0.1rem;
+                    background-color: #F0F0F0;
+                  }
+                  .btn_download {
+                    display: flex;
+                    gap: 0.5rem;
+                    align-items: center;
+                    max-width: 31.2rem;
+                    height: 5.3rem;
+                    padding: 0 1.7rem;
+                    background-color: $white;
+                    border: 0.1rem solid #efefef;
+                    border-radius: 0.8rem;
+                    font-size: 1.4rem;
+                    font-weight: $medium;
+                    .txt {
+                      max-width: 55rem;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                    .ic_file {
+                      flex-shrink: 0;
+                    }
+                    .ic_download {
+                      flex-shrink: 0;
+                      width: 1.8rem;
+                      height: 1.8rem;
+                      margin-left: 2.5rem;
+                      border: 0.1rem solid #f5f5f5;
+                      border-radius: 0.2rem;
+                      background: url(../images/sub/mypage/detail_download.svg)
+                        no-repeat center;
+                    }
+                  }
+                }
+              }
+              .btn_wrap {
+                flex-shrink: 0;
+                padding: 2rem;
+                .btn_close {
+                  width: 2rem;
+                  height: 2rem;
+                  background: url(../images/teachers/menegement/payroll_close.svg) no-repeat center/cover;
+                }
+              }
+            }
+          }
+          .textaera_wrap {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            position: relative;
+            margin-top: 2.8rem;
+            .btn_attach {
+              flex-shrink: 0;
+              display: none;
+              width: 2.6rem;
+              height: 2.6rem;
+              background: url(../images/teachers/menegement/ic_plus.svg) no-repeat center/cover;
+            }
+            .plus_box {
+              display: none;
+              flex-direction: column;
+              position: absolute;
+              bottom: 5.8rem;
+              left: 0;
+              width: 17.1rem;
+              padding: 0.4rem;
+              background-color: $white;
+              border-radius: 1.4rem;
+              box-shadow: 0 0 1.8rem 0 rgba(0, 0, 0, 0.1);
+              &.active {
+                display: flex;
+              }
+              .file_group {
+                input {
+                  display: none;
+                }
+                label {
+                  display: flex;
+                  gap: 0.7rem;
+                  align-items: center;
+                  width: 100%;
+                  height: 4.9rem;
+                  padding: 0 1.6rem;
+                  font-size: 1.6rem;
+                  font-weight: $medium;
+                  &::before {
+                    content: "";
+                    display: block;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                  }
+                  &.file_attachment {
+                    &::before {
+                      background-image: url(../images/sub/chat/ic_attachment.svg);
+                    }
+                  }
+                  &.img_attachment {
+                    &::before {
+                      background-image: url(../images/sub/chat/ic_img.svg);
+                    }
+                  }
+                }
+              }
+            }
+            .textarea_group {
+              overflow: hidden;
+              flex: 1;
+              display: flex;
+              gap: 1rem;
+              align-items: center;
+              height: 5rem;
+              padding: 0 1rem 0 2rem;
+              background-color: $white;
+              border: 0.1rem solid #ECECEC;
+              border-radius: 1rem;
+              textarea {
+                flex: 1;
+                height: 100%;
+                padding: 1.6rem 0;
+                border: none;
+                font-family: "Pretendard", sans-serif;
+                font-size: 1.6rem;
+                font-weight: $medium;
+                color: #595959;
+                &::-webkit-scrollbar {
+                  display: none;
+                }
+              }
+              .btn_upload {
+                display: block;
+                width: 3.4rem;
+                height: 3.4rem;
+                background: url(../images/teachers/menegement/payroll_upload.svg) no-repeat center/cover;
+              }
+              .pc_file_group {
+                input {
+                  display: none;
+                }
+                label {
+                  display: block;
+                  width: 2rem;
+                  height: 2rem;
+                  background: url(../images/icon/ic_file.svg) no-repeat center/cover;
+                }
+              }
+            }
+          }
+          .btn_confirm {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 6.5rem auto 0;
+            width: 19.5rem;
+            height: 5.4rem;
+            background-color: $point;
+            border-radius: 0.8rem;
+            font-size: 1.6rem;
+            font-weight: $semiBold;
+            color: $white;
+          }
+        }
+      }
+      .mobile_date_modal {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      &#payroll {
+        .year_month_wrap {
+          .content_wrap {
+            .month_list {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      &#leaveOfAbsence {
+        margin-top: 6.2rem;
+        margin-bottom: 0;
+        .absence_wrap {
+          .content_wrap {
+            padding: 0;
+            .absence_box {
+              padding: 2rem 1.6rem 12rem;
+              .table_wrap {
+                display: none;
+              }
+              .info_wrap {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                &::before {
+                  display: none;
+                }
+                .tit {
+                  display: none;
+                }
+                .btn_wrap {
+                  .btn_request {
+                    position: fixed;
+                    left: 50%;
+                    bottom: 3.5rem;
+                    transform: translateX(-50%);
+                    box-shadow: 0 0 1.4rem 0 rgba(0, 0, 0, 0.1);
+                  }
+                }
+              }
+              .mo_absence_box {
+                display: block;
+                .absence_list {
+                  li {
+                    background-color: $white;
+                    border: 0.1rem solid #F1F1F1;
+                    border-radius: 0.6rem;
+                    ~ li {
+                      margin-top: 1.8rem;
+                    }
+                    .date_wrap {
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 1.6rem 2rem;
+                      border-bottom: 0.1rem solid #F1F1F1;
+                      .date {
+                        font-size: 1.6rem;
+                        font-weight: $bold;
+                      }
+                      .status {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 10.6rem;
+                        height: 2.8rem;
+                        border-radius: 2rem;
+                        font-size: 1.2rem;
+                        font-weight: $medium;
+                        &.submit {
+                          background-color: #EDEDED;
+                          color: #C1C1C1;
+                        }
+                        &.under_review {
+                          background-color: #E3F290;
+                          color: #658D01;
+                        }
+                        &.confirm {
+                          background-color: #E0EDFF;
+                          color: $point;
+                        }
+                        &.declined {
+                          background-color: #FCCBCB;
+                          color: #E41D1D;
+                        }
+                      }
+                    }
+                    .txt_wrap {
+                      padding: 2rem;
+                      .txt_list {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        ~ .txt_list {
+                          margin-top: 1.1rem;
+                        }
+                        .sort {
+                          font-size: 1.4rem;
+                          font-weight: $semiBold;
+                          color: #707070;
+                        }
+                        .detail {
+                          font-size: 1.4rem;
+                          font-weight: $medium;
+                        }
+                      }
+                    }
+                    .btn_wrap {
+                      padding: 0 2rem 2rem;
+                      .btn_request_form {
+                        display: flex;
+                        gap: 0.7rem;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        height: 5.4rem;
+                        background-color: #E0ECFF;
+                        border-radius: 0.8rem;
+                        font-size: 1.6rem;
+                        font-weight: $semiBold;
+                        color: $point;
+                        &::after {
+                          content: '';
+                          display: block;
+                          width: 1.4rem;
+                          height: 1.4rem;
+                          background: url(../images/teachers/performance/ic_arrow_popup.svg) no-repeat center/cover;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &#payroll {
+        margin-top: 6.2rem;
+        margin-bottom: 4rem;
+        .year_month_wrap {
+          margin-top: 0;
+          padding-top: 2.6rem;
+          border-bottom: 0.1rem solid #ECECEC;
+          .content_wrap {
+            .month_wrap {
+              gap: 1.5rem;
+              .month_text {
+                font-size: 2.8rem;
+              }
+              .mo_month_picker {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3.3rem;
+                height: 3.3rem;
+                background: #F6F8FF url(../images/teachers/menegement/payroll_calendar.svg) no-repeat center;
+                border: 0.1rem solid #F6F8FF;
+                border-radius: 0.8rem;
+                font-size: 3.4rem;
+                font-weight: $bold;
+              }
+              .month_picker, .flatpickr-wrapper {
+                display: none;
+              }
+            }
+            .month_list {
+              position: relative;
+              margin-top: 2.6rem;
+              padding-bottom: 3rem;
+              border-bottom: none;
+              li {
+                flex-direction: row;
+                align-items: center;
+                height: 5.9rem;
+                padding: 1.4rem 2.3rem 1.4rem 2rem;
+                .num {
+                  font-size: 2.6rem;
+                }
+                &.total {
+                  min-height: 7rem;
+                }
+              }
+            }
+          }
+        }
+        .class_detail {
+          margin-top: 4.6rem;
+          .content_wrap {
+            .tit_wrap {
+              align-items: center;
+              margin-bottom: 1.3rem;
+              padding-right: 1rem;
+              h3 {
+                font-size: 1.8rem;
+              }
+            }
+            .table_total_wrap {
+              width: calc(100% + 3.2rem);
+              margin-left: -1.6rem;
+              padding: 1.6rem 1.6rem 0;
+              background-color: #F7F8FC;
+              .table_inner_box {
+                overflow: hidden;
+                border-radius: 0.7rem;
+                .table_wrap {
+                  position: relative;
+                  padding: 0;
+                  border-radius: 0;
+                  table {
+                    thead {
+                      tr {
+                        th {
+                          &:last-child {
+                            position: sticky;
+                            right: 0;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                          &.company {
+                            min-width: 12.6rem;
+                          }
+                        }
+                      }
+                    }
+                    tbody {
+                      tr {
+                        td {
+                          font-size: 1.2rem;
+                          &:last-child {
+                            overflow: visible;
+                            position: sticky;
+                            right: 0;
+                            background-color: $white;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                        }
+                      }
+                    }
+                    tfoot {
+                      tr {
+                        td {
+                          font-size: 1.2rem;
+                          &:last-child {
+                            overflow: visible;
+                            position: sticky;
+                            right: 0;
+                            background-color: #E7F0FF;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                          &:first-child {
+                            padding-left: 1.6rem;
+                            text-align: left;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .scroll_info {
+              width: calc(100% + 3.2rem);
+              margin-left: -1.6rem;
+              padding: 1.3rem 1.6rem 2.4rem;
+              background-color: #F7F8FC;
+              .scroll_info_txt {
+                display: flex;
+                gap: 0.9rem;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 4.5rem;
+                background-color: rgba($color: #9C9FAB, $alpha: 0.9);
+                border-radius: 1rem;
+                font-size: 1.4rem;
+                font-weight: $medium;
+                color: $white;
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 3.2rem;
+                  height: 3.2rem;
+                  background: url(../images/teachers/menegement/ic_scroll.svg) no-repeat center/cover;
+                }
+              }
+            }
+          }
+        }
+        .non_class_hours {
+          margin-top: 4rem;
+          .content_wrap {
+            .tit_wrap {
+              margin-bottom: 1.3rem;
+              h3 {
+                font-size: 1.8rem;
+              }
+            }
+            .table_total_wrap {
+              width: calc(100% + 3.2rem);
+              margin-left: -1.6rem;
+              padding: 1.6rem 1.6rem 0;
+              background-color: #F7F8FC;
+              .table_inner_box {
+                overflow: hidden;
+                border-radius: 0.7rem;
+                .table_wrap {
+                  position: relative;
+                  padding: 0;
+                  border-radius: 0;
+                  table {
+                    thead {
+                      tr {
+                        th {
+                          &:last-child {
+                            position: sticky;
+                            right: 0;
+                            max-width: 7.6rem;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                          &.company {
+                            min-width: 12.6rem;
+                          }
+                        }
+                      }
+                    }
+                    tbody {
+                      tr {
+                        td {
+                          font-size: 1.2rem;
+                          &:last-child {
+                            overflow: visible;
+                            position: sticky;
+                            right: 0;
+                            background-color: $white;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                        }
+                      }
+                    }
+                    tfoot {
+                      tr {
+                        td {
+                          font-size: 1.2rem;
+                          &:last-child {
+                            overflow: visible;
+                            position: sticky;
+                            right: 0;
+                            background-color: #E7F0FF;
+                            &::before {
+                              content: '';
+                              display: block;
+                              position: absolute;
+                              top: 0;
+                              left: -1.6rem;
+                              width: 1.6rem;
+                              height: 100%;
+                              background: linear-gradient(270deg, rgba(217, 217, 217, 0.21) 0%, rgba(255, 255, 255, 0) 119.57%);
+                            }
+                          }
+                          &:first-child {
+                            padding-left: 1.6rem;
+                            text-align: left;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .scroll_info {
+              width: calc(100% + 3.2rem);
+              margin-left: -1.6rem;
+              padding: 1.3rem 1.6rem 2.4rem;
+              background-color: #F7F8FC;
+              .scroll_info_txt {
+                display: flex;
+                gap: 0.9rem;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 4.5rem;
+                background-color: rgba($color: #9C9FAB, $alpha: 0.9);
+                border-radius: 1rem;
+                font-size: 1.4rem;
+                font-weight: $medium;
+                color: $white;
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 3.2rem;
+                  height: 3.2rem;
+                  background: url(../images/teachers/menegement/ic_scroll.svg) no-repeat center/cover;
+                }
+              }
+            }
+          }
+        }
+        .memo_additional_notes {
+          .content_wrap {
+            .tit_wrap {
+              margin-top: 5.3rem;
+              margin-bottom: 1.6rem;
+              padding-top: 2rem;
+              h3 {
+                font-size: 1.8rem;
+              }
+            }
+            .memo_list {
+              li {
+                position: relative;
+                .txt_wrap {
+                  border: none;
+                  .memo_txt {
+                    margin-bottom: 1.6rem;
+                    line-height: 2.1rem;
+                  }
+                  .download_box {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    padding-top: 1.5rem;
+                    &::before {
+                      display: none;
+                    }
+                    .btn_download {
+                      max-width: 100%;
+                      .ic_download {
+                        margin-left: auto;
+                      }
+                    }
+                  }
+                }
+                .btn_wrap {
+                  position: absolute;
+                  top: 2rem;
+                  right: 1.2rem;
+                  z-index: 1;
+                  padding: 0;
+                }
+              }
+            }
+            .textaera_wrap {
+              margin-top: 1.1rem;
+              .btn_attach {
+                display: flex;
+              }
+              .textarea_group {
+                height: 4.6rem;
+                padding-left: 1.6rem;
+                background-color: #FBFBFB;
+                textarea {
+                  padding: 1.3rem 0;
+                  background-color: #FBFBFB;
+                  font-size: 1.4rem;
+                }
+                .btn_group {
+                  width: 3rem;
+                  height: 3rem;
+                }
+                .pc_file_group {
+                  display: none;
+                }
+              }
+            }
+            .btn_confirm {
+              width: 100%;
+              margin-top: 4rem;
+            }
+          }
+        }
+        .mobile_date_modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba($color: $black, $alpha: 0.27);
+          &.active {
+            display: block;
+            z-index: 50;
+          }
+          .modal_content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 3.2rem);
+            background-color: $white;
+            border-radius: 1.2rem;
+            box-shadow: 0 0 1.2rem 0 rgba(0, 0, 0, 0.1);
+            .tit_wrap {
+              display: flex;
+              justify-content: space-between;
+              padding: 2rem 2rem 1.6rem;
+              .tit {
+                padding-top: 1.8rem;
+                font-size: 1.8rem;
+                font-weight: $bold;
+              }
+              .btn_close {
+                display: block;
+                width: 1.8rem;
+                height: 1.8rem;
+                background: url(../images/teachers/myClass/ic_close_mobile.svg)
+                  no-repeat center/cover;
+              }
+            }
+            .calendar_box {
+              .flatpickr-calendar {
+                &.inline {
+                  position: static;
+                  top: calc(100% + 1rem);
+                  right: 0;
+                  width: 100%;
+                  background-color: #f7f8fc;
+                  border: none;
+                  border-radius: 0;
+                  box-shadow: none;
+                  &::before,
+                  &::after {
+                    display: none;
+                  }
+                  .flatpickr-months {
+                    gap: 2rem;
+                    justify-content: center;
+                    align-items: center;
+                    height: 6rem;
+                    border-bottom: 0.1rem solid #f0f0f0;
+                    .flatpickr-month {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      max-width: 10rem;
+                      height: 100%;
+                      font-family: "Pretendard", sans-serif;
+                      font-size: 1.8rem;
+                      font-weight: $bold;
+                      color: #262626;
+                      .flatpickr-current-month {
+                        display: flex;
+                        gap: 0.4rem;
+                        flex-direction: row-reverse;
+                        justify-content: center;
+                        align-items: center;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        font-family: "Pretendard", sans-serif;
+                        font-size: 1.8rem;
+                        font-weight: $bold;
+                        color: #262626;
+                        .cur-month {
+                          display: flex;
+                          justify-content: flex-end;
+                          position: relative;
+                          width: 5rem;
+                          margin-left: 0;
+                          text-align: right;
+                          &::after {
+                            content: ",";
+                            display: block;
+                          }
+                        }
+                        .numInputWrapper {
+                          display: flex;
+                          align-items: center;
+                          position: relative;
+                          width: 5rem;
+                          height: 100%;
+                          padding: 0;
+                          input.cur-year {
+                            width: 100%;
+                            height: 100%;
+                            padding: 0;
+                            font-family: "Pretendard", sans-serif;
+                            font-size: 1.8rem;
+                            font-weight: $bold;
+                            color: #262626;
+                          }
+                          .arrowUp,
+                          .arrowDown {
+                            display: none;
+                          }
+                        }
+                      }
+                    }
+                    .flatpickr-prev-month,
+                    .flatpickr-next-month {
+                      position: static;
+                      width: 1.2rem;
+                      height: 1.2rem;
+                      padding: 0;
+                      background: url(../images/sub/class/room_calender_arrow.svg)
+                        no-repeat center/cover;
+                      svg {
+                        display: none;
+                      }
+                    }
+                    .flatpickr-prev-month {
+                      transform: scaleX(-1);
+                    }
+                  }
+                  .flatpickr-innerContainer {
+                    width: 100%;
+                    .flatpickr-rContainer {
+                      width: 100%;
+                      padding: 3.2rem 1rem;
+                      .flatpickr-monthSelect-months {
+                        margin: 0;
+                        .flatpickr-monthSelect-month {
+                          display: inline-flex;
+                          justify-content: center;
+                          align-items: center;
+                          height: 5.4rem;
+                          font-family: "Pretendard", sans-serif;
+                          font-size: 1.6rem;
+                          font-weight: $semiBold;
+                          color: #262626;
+                          &:hover, &:focus {
+                            background-color: transparent;
+                            border: none;
+                          }
+                          &.today {
+                            border: none;
+                          }
+                          &.selected {
+                            background-color: transparent;
+                            border: none;
+                            color: $point !important;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            .btn_wrap {
+              display: flex;
+              gap: 1.1rem;
+              align-items: center;
+              padding: 2rem;
+              button {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 5.4rem;
+                background-color: $white;
+                border: 0.1rem solid $point;
+                border-radius: 0.8rem;
+                font-size: 1.6rem;
+                font-weight: $semiBold;
+                color: $point;
+                &.btn_save {
+                  background-color: $point;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

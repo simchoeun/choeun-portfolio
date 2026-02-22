@@ -1,0 +1,56 @@
+<div class="content_wrap">
+  <div class="empty" aria-hidden="true"></div>
+  <div class="btn_list">
+    <button type="button" class="btn_calendar"></button>
+    <button type="button" class="btn_home"></button>
+    <button type="button" class="btn_widget"></button>
+  </div>
+  <button type="button" class="btn_setting"></button>
+</div>
+
+<script>
+  const menuOpenCalendar = () => {
+    const calendarBtn = document.querySelector('#menubar .btn_calendar');
+    const homeBtn = document.querySelector('#menubar .btn_home'); 
+    const calendarWrap = document.getElementById('calendarWrap');
+    const menubar = document.getElementById('menubar');
+    const mainEl = document.querySelector('main') || document.getElementById('mainPage'); 
+
+    // 캘린더 열기 함수
+    const openCalendar = () => {
+      if (calendarWrap && !calendarWrap.classList.contains('active')) {
+        calendarWrap.classList.add('active');
+      }
+      if (menubar && !menubar.classList.contains('has_calendar')) {
+        menubar.classList.add('has_calendar');
+      }
+      if (mainEl) {
+          mainEl.classList.add('slice_calendar');
+        }
+    };
+
+    // 캘린더 닫기 함수
+    const closeCalendar = () => {
+      if (calendarWrap && calendarWrap.classList.contains('active')) {
+        calendarWrap.classList.remove('active');
+      }
+      if (menubar && menubar.classList.contains('has_calendar')) {
+        menubar.classList.remove('has_calendar');
+      }
+      if (mainEl) {
+          mainEl.classList.remove('slice_calendar');
+        }
+    };
+
+    // 메뉴바 달력 버튼 클릭 → 열기
+    if (calendarBtn) {
+      calendarBtn.addEventListener('click', openCalendar);
+    }
+
+    // 메뉴바 홈 버튼 클릭 → 닫기
+    if (homeBtn) {
+      homeBtn.addEventListener('click', closeCalendar);
+    }
+  };
+  menuOpenCalendar();
+</script>

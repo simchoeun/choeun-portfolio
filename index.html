@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no,maximum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Choun Portfolio</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/style.css?ver=<?=time()?>">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/plugin/swiper-bundle.min.css" />
+
+    <!-- JS -->
+    <script src="./assets/js/plugin/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/plugin/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.2/intersection-observer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis"></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <div class="content_wrap">
+          <h1 class="logo_txt">choni</h1>
+        </div>
+      </header>
+      <main class="container main" id="mainPage">
+        <section class="visual" id="visual">
+          <div class="deco_box">
+            <div class="circle deco01"></div>
+            <div class="circle deco02"></div>
+          </div>
+          <div class="content_wrap">
+            <h2 class="neon_txt">CHONI</h2>
+            <h3 class="neon_txt">Web Portfolio</h3>
+          </div>
+        </section>
+        <section class="about" id="about">
+          <div class="content_wrap">
+            <div class="img_wrap">
+              <h3 class="main_tit neon_txt">About</h3>
+              <div class="img_box">
+                <img src="/assets/images/about.jpg" alt="about 이미지"/>
+                <div class="bg_img"></div>
+              </div>
+            </div>
+            <div class="txt_wrap">
+              <p class="about_txt">
+                안녕하세요, 항상 과정을 즐기며 성장하는 웹퍼블리셔 심초은입니다!<br/>
+
+                CSS와 Javascript를 이용한 동적인 화면을 구현하는 것에 관심이 많으며, 
+                새로운 기술과 트랜드를 익히기 위하여 꾸준히 공부하고있습니다.<br/>
+                
+                프로젝트를 진행하면서 발생하는 어려움들을 즐거운 도전으로 여기고, 
+                문제를 해결하며 성장하는 자신감을 가지고 있습니다.<br/>
+                
+                코드를 작성하는 과정에서도 디테일에 주의를 기울이며, 
+                최적화와 유지보수에 대한 책임감을 가지고 작업합니다. 
+                또한 팀원들과의 원활한 커뮤니케이션과 협력을 중요시하여 팀 프로젝트의 성공을 위해 노력합니다.
+              </p>
+              <p class="list_tit">E X P E R I E N C E S</p>
+              <ul class="company_list">
+                <li>
+                  <p class="company_sort">(주)인더엑스 | 웹퍼블리셔 (2024.12 - 2025.11)</p>
+                  <ul class="detail">
+                    <li>B2B 기업 홈페이지를 중심으로, 인터랙션이 많은 퍼블리싱을 경험한 환경</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="company_sort">(주)두시스템 | 웹퍼블리셔 프리랜서 (2024.07 - 2024.08)</p>
+                  <ul class="detail">
+                    <li>단기 일정의 파견·외주 프로젝트 위주 퍼블리싱</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="company_sort">(주)오픈오브젝트 | 웹퍼블리셔 (2023.09 - 2024.07)</p>
+                  <ul class="detail">
+                    <li>유지보수와 신규 구축을 병행하며 실서비스 운영을 경험한 환경</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="company_sort">(주)인스팟 | 웹퍼블리셔 (2021.12 - 2023.05)</p>
+                  <ul class="detail">
+                    <li>다수의 기업 홈페이지를 빠르게 제작하며 기본기를 다진 웹 에이전시</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+
+<section class="works" id="works">
+  <div class="content_wrap">
+    <div class="works_filter">
+      <button class="btn_company active" type="button" data-filter="inthex" aria-selected="true">인더엑스</button>
+      <button class="btn_company" type="button" data-filter="openobject" aria-selected="false">오픈오브젝트</button>
+      <!-- <button class="btn_company" type="button" data-filter="inspot" aria-selected="false">인스팟</button> -->
+    </div>
+
+    <ul class="works_list">
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="펫누리 홈페이지 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱 · GSAP ScrollTrigger"
+        data-stack="HTML · SCSS · JS · GSAP"
+        data-company="(주)인더엑스"
+        data-period="2025.11.07 - 2025.11.14"
+        data-contribution="퍼블리싱 100%"
+        data-summary="콘텐츠 흐름에 맞춰 섹션별 스크롤 인터랙션을 설계하고, 자연스러운 전환과 집중도를 높이도록 모션 타이밍을 조정했습니다."
+        data-tasks="메인/서브 퍼블리싱|반응형 대응(PC/MO)|GSAP ScrollTrigger 인터랙션|공통 컴포넌트 정리|크로스브라우징 점검"
+        data-link="https://petnuri.kr/"
+        data-img="/assets/images/work_petnuri.jpg"
+        data-img-alt="펫누리"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_petnuri.jpg" alt="펫누리" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>반응형</span>
+          </p>
+          <p class="work_title">펫누리 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱 · GSAP ScrollTrigger</p>
+          <p class="work_stack">HTML · SCSS · JS · GSAP</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="스마트 디바이스 전용 웹 UI 구축"
+        data-badge="디바이스 전용"
+        data-desc="메인/서브 퍼블리싱"
+        data-stack="HTML · SCSS · JS"
+        data-company="(주)인더엑스"
+        data-period="2025.10.27 - 2025.11.21"
+        data-contribution="퍼블리싱 100%"
+        data-summary="웹 브라우저 기반이지만, 스마트 미러/스타일러 디바이스에 탑재되는 환경을 고려해 고정 해상도 UI와 터치 인터랙션에 최적화된 구조로 퍼블리싱했습니다."
+        data-tasks="1080×1920 고정 해상도 UI 퍼블리싱|해상도 기준 레이아웃 및 비율 관리|공통 UI 컴포넌트 구조화"
+
+        data-link="/html/heymirror/index.html"
+        data-img="/assets/images/work_heymirror.jpg"
+        data-img-alt="헤이미러"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_heymirror.jpg" alt="헤이미러" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>디바이스 전용</span>
+          </p>
+          <p class="work_title">스마트 디바이스 전용 웹 UI 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱</p>
+          <p class="work_stack">HTML · SCSS · JS</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="어반블루 홈페이지 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱 · GSAP ScrollTrigger"
+        data-stack="HTML · SCSS · JS · GSAP"
+        data-company="(주)인더엑스"
+        data-period="2025.08.04 - 2025.08.28"
+        data-contribution="퍼블리싱 100%"
+        data-summary="콘텐츠 흐름에 맞춰 섹션별 스크롤 인터랙션을 설계하고, 자연스러운 전환과 집중도를 높이도록 모션 타이밍을 조정했습니다."
+        data-tasks="메인/서브 퍼블리싱|반응형 대응(PC/MO)|GSAP ScrollTrigger 인터랙션|공통 컴포넌트 정리|크로스브라우징 점검"
+        data-link="/html/urbanblue/index.html"
+        data-img="/assets/images/work_urbanblue.jpg"
+        data-img-alt="어반블루"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_urbanblue.jpg" alt="어반블루" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>반응형</span>
+          </p>
+          <p class="work_title">어반블루 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱 · GSAP ScrollTrigger</p>
+          <p class="work_stack">HTML · SCSS · JS · GSAP</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="spep 홈페이지 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱"
+        data-stack="HTML · SCSS · JS · chart"
+        data-company="(주)인더엑스"
+        data-period="2025.02.21 - 2025.06.24"
+        data-contribution="퍼블리싱 100%"
+        data-summary="교육 콘텐츠를 수강 흐름에 맞게 구조화하고, 학습에 집중할 수 있도록 안정적인 UI 구성과 정보 전달 중심으로 퍼블리싱했습니다."
+        data-tasks="메인/서브 페이지 퍼블리싱|교육 과정·수강 페이지 UI 구현|PC/MO 반응형 대응|공통 컴포넌트 구조화"
+        data-link="/html/spep/index_student.html"
+        data-img="/assets/images/work_spep.jpg"
+        data-img-alt="spep"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_spep.jpg" alt="spep" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>반응형</span>
+          </p>
+          <p class="work_title">SPEP 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱 · chart</p>
+          <p class="work_stack">HTML · SCSS · JS</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="바른 홈페이지 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱 · GSAP ScrollTrigger"
+        data-stack="HTML · SCSS · JS · GSAP"
+        data-company="(주)인더엑스"
+        data-period="2025.01.14 - 2025.02.21"
+        data-contribution="퍼블리싱 100%"
+        data-summary="콘텐츠 흐름에 맞춰 섹션별 스크롤 인터랙션을 설계하고, 자연스러운 전환과 집중도를 높이도록 모션 타이밍을 조정했습니다."
+        data-tasks="메인/서브 퍼블리싱|반응형 대응(PC/MO)|GSAP ScrollTrigger 인터랙션|공통 컴포넌트 정리|크로스브라우징 점검"
+        data-link="http://barun-in.com/"
+        data-img="/assets/images/work_barun.jpg"
+        data-img-alt="바른"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_barun.jpg" alt="바른" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>반응형</span>
+          </p>
+          <p class="work_title">바른 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱 · GSAP ScrollTrigger</p>
+          <p class="work_stack">HTML · SCSS · JS · GSAP</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="inthex"
+        data-title="동방푸드 홈페이지 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱 · GSAP ScrollTrigger"
+        data-stack="HTML · SCSS · JS · GSAP"
+        data-company="(주)인더엑스"
+        data-period="2024.12.18 - 2025.01.13"
+        data-contribution="퍼블리싱 100%"
+        data-summary="콘텐츠 흐름에 맞춰 섹션별 스크롤 인터랙션을 설계하고, 자연스러운 전환과 집중도를 높이도록 모션 타이밍을 조정했습니다."
+        data-tasks="메인/서브 퍼블리싱|반응형 대응(PC/MO)|GSAP ScrollTrigger 인터랙션|공통 컴포넌트 정리|크로스브라우징 점검"
+        data-link="https://www.dongbangfood.com//"
+        data-img="/assets/images/work_dongbangfood.jpg"
+        data-img-alt="동방푸드"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_dongbangfood.jpg" alt="동방푸드" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>반응형</span>
+          </p>
+          <p class="work_title">동방푸드 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱 · GSAP ScrollTrigger</p>
+          <p class="work_stack">HTML · SCSS · JS · GSAP</p>
+        </div>
+      </li>
+
+      <!-- ===================== -->
+      <!-- 오픈오브젝트 (openobject) -->
+      <!-- ===================== -->
+      <li
+        class="work_item"
+        data-filtercard="openobject"
+        data-title="포토샵 어플 구축"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱"
+        data-stack="HTML · SCSS · JS"
+        data-company="(주)오픈오브젝트"
+        data-period="2024.02 - 2024.08"
+        data-contribution="퍼블리싱 100%"
+        data-summary="반려동물 카드를 직접 꾸밀 수 있는 기능형 서비스로, 제작 흐름에 맞춰 화면 구조를 구성하고 모바일 환경에서 자연스러운 인터랙션이 동작하도록 퍼블리싱했습니다."
+        data-tasks="카드 제작 서비스 메인/서브 퍼블리싱|모바일 메뉴 및 인터랙션 UI 구현|인트로·모달·저장 화면 퍼블리싱|협업 환경 컴포넌트 구조화|반응형 대응 및 QA 수정"
+        data-link="https://www.shinhancard.com/mob/MOBFM038N/MOBFM038C54.shc?EntryLoc=3477&tmEntryLoc=&empSeq=0&targetID=&datakey=&agcCd="
+        data-img="/assets/images/work_thepet.jpg"
+        data-img-alt="The Pet"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_thepet.jpg" alt="The Pet" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>포토샵 어플</span>
+          </p>
+          <p class="work_title">포토샵 어플 구축</p>
+          <p class="work_desc">메인/서브 퍼블리싱</p>
+          <p class="work_stack">HTML · SCSS · JS</p>
+        </div>
+      </li>
+      <li
+        class="work_item"
+        data-filtercard="openobject"
+        data-title="티머니GO 개편 및 장차법 적용"
+        data-badge="반응형"
+        data-desc="메인/서브 퍼블리싱"
+        data-stack="HTML · SCSS · JS"
+        data-company="(주)오픈오브젝트"
+        data-period="2024.04 - 2024.06"
+        data-contribution="퍼블리싱 100%"
+        data-summary="티머니GO 애플리케이션 UI/UX 개편 프로젝트로, 실제 운영 환경에서 화면 퍼블리싱과 앱 접근성 개선 작업을 중심으로 진행했습니다."
+        data-tasks="티머니GO 앱 화면 퍼블리싱 구축|UI/UX 개편 대응 퍼블리싱|앱 접근성 개선 작업|Vue·SCSS 기반 컴포넌트 작업|협업 환경 QA 및 수정 대응"
+        data-link="https://play.google.com/store/search?q=%ED%8B%B0%EB%A8%B8%EB%8B%88%EA%B3%A0&c=apps&hl=ko"
+        data-img="/assets/images/work_tmoney.jpg"
+        data-img-alt="Tmoney"
+      >
+        <div class="img_wrap">
+          <img src="/assets/images/work_tmoney.jpg" alt="Tmoney" />
+        </div>
+        <div class="work_meta">
+          <p class="work_badge">
+            <span>VUE3</span>
+          </p>
+          <p class="work_title">티머니GO 개편 및 장차법 적용</p>
+          <p class="work_desc">메인/서브 퍼블리싱</p>
+          <p class="work_stack">HTML · SCSS · JS</p>
+        </div>
+      </li>
+
+      <!-- ===================== -->
+      <!-- 인스팟 (inspot) -->
+      <!-- ===================== -->
+      <!-- <li
+        class="work_item"
+        data-filtercard="inspot"
+        data-title="서비스 소개 페이지"
+        data-badge="반응형"
+        data-desc="섹션형 레이아웃 · 애니메이션"
+        data-stack="HTML · SCSS · JS"
+        data-company="인스팟"
+        data-period="2023.07 - 2023.08"
+        data-contribution="퍼블리싱 100%"
+        data-summary="가독성과 전환 흐름을 우선으로 섹션 구성과 정보 밀도를 조정했습니다."
+        data-tasks="섹션형 레이아웃 구축|반응형 타이포 스케일|키비주얼 영역 구현|QA 대응"
+        data-link="https://example.com"
+        data-img="https://picsum.photos/1000/700?random=41"
+        data-img-alt="서비스 소개 페이지 미리보기"
+      >
+        <div class="img_wrap">
+          <img src="https://picsum.photos/800/520?random=41" alt="" />
+        </div>
+        <div class="workMeta">
+          <p class="work_badge">반응형</p>
+          <p class="work_title">서비스 소개 페이지</p>
+          <p class="work_desc">섹션형 레이아웃 · 애니메이션</p>
+          <p class="work_stack">HTML · SCSS · JS</p>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+
+  <!-- 모달 -->
+  <div class="works_modal" aria-hidden="true">
+    <div class="works_modal_dim" data-modal-close></div>
+
+    <div class="works_modal_panel">
+      <button class="works_modal_close" type="button" data-modal-close aria-label="닫기"></button>
+
+      <div class="works_modal_body">
+        <div class="works_modal_img"></div>
+
+        <div class="works_modal_meta">
+          <p class="m_badge"></p>
+          <h3 class="m_title"></h3>
+
+          <dl class="m_info">
+            <div class="m_row">
+              <dt>회사</dt><dd class="m_company"></dd>
+            </div>
+            <div class="m_row">
+              <dt>기간</dt><dd class="m_period"></dd>
+            </div>
+            <div class="m_row">
+              <dt>기여도</dt><dd class="m_contribution"></dd>
+            </div>
+            <div class="m_row">
+              <dt>기술</dt><dd class="m_stack"></dd>
+            </div>
+          </dl>
+
+          <p class="m_summary"></p>
+          <ul class="m_tasks"></ul>
+
+          <a class="m_link" href="javascript:void(0)" target="_blank" style="display:none;">사이트 보기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      </main>
+    </div>
+
+
+    <script>
+      AOS.init({
+        duration: 1500, 
+        once: true,
+        easing: 'ease',
+      });
+
+      // 스크롤 부드럽게
+      const lenis = new Lenis()
+      const raf = (time) => {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+      requestAnimationFrame(raf)
+    </script>
+
+
+<script>
+const worksWrap = () => {
+  const root = document.querySelector('#works');
+  if (!root) return;
+
+  const filterWrap = root.querySelector('.works_filter');
+  const list = root.querySelector('.works_list');
+  const items = Array.from(root.querySelectorAll('.works_list .work_item'));
+
+  // modal
+  const modal = root.querySelector('.works_modal');
+  const closeEls = root.querySelectorAll('[data-modal-close]');
+  const modalImg = root.querySelector('.works_modal_img');
+
+  // modal fields
+  const mBadge = root.querySelector('.m_badge');
+  const mTitle = root.querySelector('.m_title');
+  const mCompany = root.querySelector('.m_company');
+  const mPeriod = root.querySelector('.m_period');
+  const mContribution = root.querySelector('.m_contribution');
+  const mStack = root.querySelector('.m_stack');
+  const mSummary = root.querySelector('.m_summary');
+  const mTasks = root.querySelector('.m_tasks');
+  const mLink = root.querySelector('.m_link');
+
+  let currentFilter = null;
+  let lastFocusedEl = null;
+
+  const render = () => {
+    items.forEach(item => item.classList.add('is_hidden'));
+
+    items
+      .filter(item => item.dataset.filtercard === currentFilter)
+      .forEach(item => item.classList.remove('is_hidden'));
+  };
+
+  const setActiveFilter = (filter) => {
+    currentFilter = filter;
+
+    // ✅ 여기서 버튼 활성화 확실히
+    const btns = root.querySelectorAll('.works_filter .btn_company');
+    btns.forEach(btn => {
+      const isActive = btn.dataset.filter === filter;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    render();
+  };
+
+  const openModal = (item) => {
+    lastFocusedEl = document.activeElement;
+
+    const d = item.dataset;
+
+    const imgSrc = d.img || item.querySelector('.img_wrap img')?.getAttribute('src') || '';
+    const imgAlt = d.imgAlt || item.querySelector('.img_wrap img')?.getAttribute('alt') || '';
+    modalImg.innerHTML = imgSrc ? `<img src="${imgSrc}" alt="${imgAlt}">` : '';
+
+    mBadge.textContent = d.badge || '';
+    mTitle.textContent = d.title || '';
+    mCompany.textContent = d.company || '';
+    mPeriod.textContent = d.period || '';
+    mContribution.textContent = d.contribution || '';
+    mStack.textContent = d.stack || '';
+    mSummary.textContent = d.summary || '';
+
+    mTasks.innerHTML = '';
+    const tasks = (d.tasks || '').split('|').map(v => v.trim()).filter(Boolean);
+    tasks.forEach(t => {
+      const li = document.createElement('li');
+      li.textContent = t;
+      mTasks.appendChild(li);
+    });
+
+    const link = (d.link || '').trim();
+    if (link) {
+      mLink.href = link;
+      mLink.style.display = '';
+    } else {
+      mLink.href = '#';
+      mLink.style.display = 'none';
+    }
+
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    root.querySelector('.works_modal_close')?.focus();
+  };
+
+  const closeModal = () => {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocusedEl) lastFocusedEl.focus();
+  };
+
+  // ==========================
+  // ✅ 필터 버튼: 이벤트 위임으로 확실히 동작
+  // ==========================
+  if (filterWrap) {
+    filterWrap.addEventListener('click', (e) => {
+      const btn = e.target.closest('.btn_company');
+      if (!btn || !filterWrap.contains(btn)) return;
+
+      // ✅ 버튼이 form 안에 있어도 submit 방지
+      e.preventDefault();
+
+      const filter = btn.dataset.filter;
+      if (!filter) return;
+
+      setActiveFilter(filter);
+    });
+  }
+
+  // ==========================
+  // 리스트 클릭 → 모달 (이벤트 위임)
+  // ==========================
+  if (list) {
+    list.addEventListener('click', (e) => {
+      const item = e.target.closest('.work_item');
+      if (!item || !list.contains(item)) return;
+      if (item.classList.contains('is_hidden')) return;
+      openModal(item);
+    });
+  }
+
+  // close
+  closeEls.forEach(el => el.addEventListener('click', closeModal));
+
+  // ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
+  });
+
+  // init: active 버튼 기준
+  const activeBtn = root.querySelector('.works_filter .btn_company.active');
+  setActiveFilter(activeBtn?.dataset.filter || 'inthex');
+};
+
+document.addEventListener('DOMContentLoaded', worksWrap);
+
+
+</script>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

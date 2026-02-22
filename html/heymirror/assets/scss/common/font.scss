@@ -1,0 +1,139 @@
+html,
+body {
+  font-family: "Pretendard", sans-serif;
+}
+/* 공통 컨텐츠 font */
+
+/* Pretendard */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-Thin.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-ExtraLight.woff") format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../font/pretendard/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+}
+
+/* Plus Jakarta Sans */
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-ExtraLight.woff")
+    format("woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-Light.woff")
+    format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-Regular.woff")
+    format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-Medium.woff")
+    format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-SemiBold.woff")
+    format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-Bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  src: url("../font/Plus_Jakarta_Sans/PlusJakartaSans-ExtraBold.woff")
+    format("woff");
+  font-weight: 800;
+}
+
+/* SB-Aggro */
+@font-face {
+  font-family: 'SBAggro', sans-serif;
+  font-style: normal;
+  src: url('../font/sb-aggro/SB-AggroOTF-L.woff') format('woff');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'SBAggro', sans-serif;
+  font-style: normal;
+  src: url('../font/sb-aggro/SB-AggroOTF-M.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'SBAggro', sans-serif;
+  font-style: normal;
+  src: url('../font/sb-aggro/SB-AggroOTF-B.woff') format('woff');
+  font-weight: 700;
+}

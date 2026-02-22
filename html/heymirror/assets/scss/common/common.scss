@@ -1,0 +1,100 @@
+@import "_mixin";
+@import "_variable";
+@import "font";
+
+html,
+body {
+  background-color: $black;
+  font-size: 62.5%;
+  color: $white;
+}
+body {
+  overflow: hidden;
+}
+
+.blind {
+  @include blind;
+}
+
+.pc_hidden {
+  display: none !important;
+}
+
+.mo_hidden {
+  display: block !important;
+}
+
+:root {
+  --vh: 1vh;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--vh, 1vh) * 100);
+
+  .content_wrap {
+    position: relative;
+    max-width: 176rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 7rem;
+  }
+
+  input,
+  textarea {
+    font-family: "SUIT", sans-serif;
+  }
+
+  .mask {
+    overflow: hidden;
+  }
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin_bg {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  [data-aos="fade-up"] {
+    transform: translate3d(0, 30px, 0) !important;
+  }
+  [data-aos^="fade"][data-aos^="fade"].aos-animate {
+    transform: translateZ(0) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .pc_hidden {
+    display: block !important;
+  }
+
+  .mo_hidden {
+    display: none !important;
+  }
+
+  #wrap {
+    .content_wrap {
+      padding: 0 2rem;
+    }
+  }
+}

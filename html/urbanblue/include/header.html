@@ -1,0 +1,84 @@
+<div class="content_wrap">
+  <nav>
+    <ul>
+      <li>
+        <a href="/html/urbanblue/html/aboutUs.html" title="About us" class="depth1">About us</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" title="위탁운영" class="depth1">위탁운영</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" title="Program" class="depth1">Program</a>
+      </li>
+    </ul>
+  </nav>
+  <a href="/html/urbanblue/index.html" title="UrbanBlue" class="logo"></a>
+  <a href="javascript:void(0)" title="Contact" class="btn_contact">Contact</a>
+  <button type="button" class="btn_menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="mo_nav_wrap">
+    <ul class="mo_nav_list">
+      <li>
+        <a href="/html/urbanblue/html/aboutUs.html" title="About us" class="mo_depth1">About us</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" title="위탁운영" class="mo_depth1">위탁운영</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" title="Program" class="mo_depth1">Program</a>
+      </li>
+      <li>
+        <a href="javascript:void(0)" title="Contact" class="mo_depth1">Contact</a>
+      </li>
+    </ul>
+    <div class="info_wrap">
+      <ul class="sns_list">
+        <li>
+          <a href="javascript:void(0)" title="인스타그램" class="ic_sns instagram"></a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" title="네이버" class="ic_sns naver"></a>
+        </li>
+      </ul>
+      <div class="info_txt">
+        <p>URBANBLUE@urbanblue.co.kr</p>
+        <p>0507-1426-2235</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /**
+   * Header 모바일 메뉴 클릭 시
+   */
+  const mobileMenu = () => {
+    const btnMenu = document.querySelector("#header .btn_menu");
+    const moMenuWrap = document.querySelector("#header .mo_nav_wrap");
+  
+    btnMenu.addEventListener("click", function () {
+      this.classList.toggle("active");
+      moMenuWrap.classList.toggle("active");
+  
+      const header = document.querySelector("#header");
+      if (header) {
+        header.classList.toggle("active");
+      }
+  
+      // body 스크롤 막기 / 허용
+      if (moMenuWrap.classList.contains("active")) {
+        document.body.style.overflow = "hidden"; 
+        document.body.style.position = "fixed";
+        document.body.style.width = "100%";
+      } else {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+      }
+    });
+  }
+  mobileMenu();
+</script>

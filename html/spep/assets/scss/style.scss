@@ -1,0 +1,20 @@
+// scss 파일 통합
+@import "./common/common";
+@import "./common/header";
+@import "./common/footer";
+@import "./common/modal";
+@import "./main";
+@import "./join";
+@import "./mobile_learning";
+@import "./class";
+@import "./mypage";
+@import "./chat";
+
+// 강사단
+@import "./teachers_header.scss";
+@import "./teachers_class.scss";
+@import "./teachers_performance.scss";
+@import "./teachers_management.scss";
+@import "./teachers_login.scss";
+@import "./teachers_messenger.scss";
+@import "./teachers_myinfo.scss";

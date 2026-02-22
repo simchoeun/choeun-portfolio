@@ -1,0 +1,936 @@
+#voiceCommand {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  transition: opacity 0.4s ease; 
+  background-color: rgba($color: $black, $alpha: 0.8);
+  width: 100%;
+  height: calc(100% - 55.6rem);
+  &::before {
+    content: '';
+    opacity: 0.8;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rem;
+    background: linear-gradient(180deg, #000000 0%, #1D1D1D 100%);
+  }
+  .voice_command_wrap {
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 10rem;
+    .voice_command_box {
+      position: relative;
+      width: 64.4rem;
+      height: 88rem;
+      .voice_airshower_box {
+        pointer-events: none;
+        overflow: hidden;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        width: 100%;
+        height: 100%;
+        padding: 7.2rem 3rem 0;
+        background-color: rgba($color: #F9F9F9, $alpha: 0.9);
+        box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+        backdrop-filter: blur(3rem);
+        border-radius: 6rem;
+        .tit {
+          position: relative;
+          width: max-content;
+          margin: 0 auto 1.2rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 7rem;
+          font-weight: $semiBold;
+          letter-spacing: -0.02em;
+          color: $black;
+          .sub_tit {
+            position: absolute;
+            top: -1rem;
+            right: -1.8rem;
+            font-size: 3rem;
+            font-weight: $medium;
+            letter-spacing: -0.02em;
+            color: $black;
+          }
+        }
+        .airshower_status {
+          margin-bottom: 1.2rem;
+          font-size: 2.2rem;
+          font-weight: $semiBold;
+          color: $black;
+          text-align: center;
+        }
+        .airshower_img {
+          position: relative;
+          width: 40rem;
+          height: 40rem;
+          margin: 0 auto;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            &.on_ing {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 53rem;
+              height: 53rem;
+            }
+          }
+          .video_box {
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 33.6rem;
+            height: 33.6rem;
+            border-radius: 50%;
+            video {
+              opacity: 0;
+              transition: all 0.3s;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 55.4rem;
+              height: 55.4rem;
+              border-radius: 50%;
+              &.active {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        .airshower_btn_wrap {
+          display: flex;
+          gap: 11rem;
+          justify-content: center;
+          margin-top: 0.8rem;
+          .btn_level {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 6.8rem;
+            height: 14.1rem;
+            &::before {
+              content: '';
+              transition: all 0.4s;
+              display: block;
+              position: relative;
+              z-index: 1;
+              width: 1rem;
+              height: 1rem;
+              background-color: #E6E6E6;
+              box-shadow: 0 0.2rem 0.4rem 0 rgba($color: $black, $alpha: 0.25) inset;
+              border-radius: 50%;
+            }
+            &::after {
+              opacity: 0;
+              transition: all 0.4s;
+              content: '';
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 21rem;
+              height: 21rem;
+              background-color: #D3EBFF;
+              filter: blur(10rem);
+              border-radius: 50%;
+            }
+            .ic_wrap {
+              position: relative;
+              z-index: 1;
+              transition: all 0.4s;
+              width: 6.8rem;
+              height: 6.8rem;
+              margin: 1.4rem 0 1.6rem;
+              background-image: url(../images/main/airshower_btn.png);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 6.2rem 5.9rem;
+            }
+            .txt {
+              position: relative;
+              z-index: 1;
+              transition: all 0.4s;
+              font-size: 2.8rem;
+              font-weight: $semiBold;
+              color: #A8A8A8;
+            }
+            &.weak {
+              .ic_wrap {
+                background-size: 3.5rem 3.3rem;
+              }
+            }
+            &.medium {
+              .ic_wrap {
+                background-size: 4.7rem 4.6rem;
+              }
+            }
+            &.active {
+              &::before {
+                background-color: #0F93FF;
+              }
+              &::after {
+                opacity: 1;
+              }
+              .ic_wrap {
+                background-image: url(../images/main/airshower_btn_active.png);
+              }
+              .txt {
+                color: #0F93FF;
+              }
+            }
+          }
+        }
+        .desc_txt {
+          margin-top: 5.4rem;
+          font-size: 2.2rem;
+          font-weight: $medium;
+          color: #A8A8A8;
+          text-align: center;
+        }
+      }
+      .voice_lighting_box {
+        pointer-events: none;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(40%);
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #161616, $alpha: 0.9);
+        box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+        backdrop-filter: blur(3rem);
+        border: 0.1rem solid rgba($color: $white, $alpha: 0.1);
+        border-radius: 6rem;
+        text-align: center;
+        .tit {
+          position: relative;
+          z-index: 2;
+          margin-top: 7.2rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 7rem;
+          font-weight: $semiBold;
+          letter-spacing: -0.02em;
+          color: $white;
+        }
+        .lighting_status {
+          position: relative;
+          z-index: 2;
+          margin-top: 2rem;
+          font-size: 2.2rem;
+          font-weight: $semiBold;
+          line-height: 2.8rem;
+          color: $white;
+        }
+        .lighting_img {
+          position: absolute;
+          top: -22%;
+          left: -10rem;
+          z-index: 1;
+          transition: opacity 0.8s ease;
+          width: 86rem;
+          height: auto;
+          &.fade-out {
+            opacity: 0;
+          }
+          &.fade-in {
+            opacity: 1;
+          }
+          &.is_hidden {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+          }
+          img {
+            width: 100%;
+          }
+        }
+        .lighting_basic_img {
+          position: absolute;
+          top: -22%;
+          left: -10rem;
+          width: 86rem;
+          height: auto;
+          img {
+            width: 100%;
+          }
+        }
+        .range_wrap {
+          position: absolute;
+          top: 17rem;
+          left: 0;
+          z-index: 2;
+          width: 22rem;
+          height: 61rem;
+          input {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            writing-mode: bt-lr;
+            -webkit-appearance: slider-vertical;
+            appearance: slider-vertical;
+          }
+        }
+        .percent_text {
+          display: flex;
+          align-items: center;
+          position: relative;
+          left: 33.3rem;
+          z-index: 2;
+          margin-top: 8rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 7rem;
+          letter-spacing: -0.02em;
+          color: $white;
+        }
+        .lighting_btn_wrap {
+          display: flex;
+          gap: 5.7rem;
+          flex-direction: column;
+          position: relative;
+          left: 33.3rem;
+          z-index: 2;
+          width: 15rem;
+          margin-top: 5rem;
+          button {
+            display: block;
+            position: relative;
+            transition: all 0.4s;
+            height: 5rem;
+            font-family: $font-PlusJakartaSans;
+            font-size: 4rem;
+            font-weight: $medium;
+            letter-spacing: -0.02em;
+            text-align: left;
+            color: rgba($color: $white, $alpha: 0.3);
+            &.active {
+              color: $white;
+            }
+            ~ button {
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -2.8rem;
+                left: 0;
+                width: 100%;
+                height: 0.1rem;
+                background-color: #2d2d2d;
+              }
+            }
+          }
+        }
+        .lighting_desc {
+          position: relative;
+          z-index: 2;
+          margin-top: 13.4rem;
+          font-size: 2.2rem;
+          font-weight: $medium;
+          color: #A8A8A8;
+        }
+      }
+      .voice_airdry_box {
+        pointer-events: none;
+        overflow: hidden;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(40%);
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        width: 100%;
+        height: 100%;
+        padding: 7.2rem 3rem 0;
+        background-color: rgba($color: #F9F9F9, $alpha: 0.9);
+        box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+        backdrop-filter: blur(3rem);
+        border-radius: 6rem;
+        .tit {
+          position: relative;
+          width: max-content;
+          margin: 0 auto 1.2rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 7rem;
+          font-weight: $semiBold;
+          letter-spacing: -0.02em;
+          color: $black;
+        }
+        .airdry_status {
+          font-size: 2.2rem;
+          font-weight: $semiBold;
+          color: $black;
+          text-align: center;
+        }
+        .airdry_img {
+          position: relative;
+          width: 40rem;
+          height: 40rem;
+          margin: -3rem auto 0;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: spin 2s linear infinite;
+          }
+        }
+        .airdry_btn_wrap {
+          display: flex;
+          gap: 7.8rem;
+          justify-content: center;
+          .btn_mode {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 5.2rem;
+            &::before {
+              content: '';
+              transition: all 0.4s;
+              display: block;
+              position: relative;
+              z-index: 1;
+              width: 1rem;
+              height: 1rem;
+              background-color: #E6E6E6;
+              box-shadow: 0 0.2rem 0.4rem 0 rgba($color: $black, $alpha: 0.25) inset;
+              border-radius: 50%;
+            }
+            &::after {
+              opacity: 0;
+              transition: all 0.4s;
+              content: '';
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 12.2rem;
+              height: 12.2rem;
+              background-color: #D3EBFF;
+              filter: blur(10rem);
+              border-radius: 50%;
+            }
+            .txt {
+              position: relative;
+              z-index: 1;
+              transition: all 0.4s;
+              font-size: 3rem;
+              font-weight: $semiBold;
+              color: #A8A8A8;
+            }
+            &.active {
+              &::before {
+                background-color: #0F93FF;
+              }
+              &::after {
+                opacity: 1;
+              }
+              .txt {
+                color: #0F93FF;
+              }
+            }
+          }
+        }
+        .humidity_btn_box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 50.8rem;
+          margin: 5.5rem auto 0;
+          .humidity_num {
+            background: linear-gradient(90deg, #3C3C3C 0%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-family: $font-PlusJakartaSans;
+            font-size: 6rem;
+            letter-spacing: -0.03em;
+          }
+          .btn_up,
+          .btn_down {
+            overflow: hidden;
+            display: block;
+            position: relative;
+            width: 11.8rem;
+            height: 5.9rem;
+            border-radius: 14rem;
+            box-shadow: 0.6rem 1rem 2rem 0 rgba(58, 96, 112, 0.22);
+            &::before {
+              pointer-events: none;
+              content: '';
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              border-radius: 14rem;
+              box-shadow: -1rem -1rem 2rem 0 rgba(245, 246, 252, 1);
+            }
+            .ic_arrow {
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: $white url(../images/main/airdry_arrow.svg) no-repeat center/4.2rem 4.2rem;
+            }
+          }
+          .btn_down {
+            .ic_arrow {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .desc_txt {
+          margin-top: 4.7rem;
+          font-size: 2.2rem;
+          font-weight: $medium;
+          color: #A8A8A8;
+          text-align: center;
+        }
+      }
+      .voice_radio_box {
+        pointer-events: none;
+        overflow: hidden;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 7.2rem 3rem 0;
+        background-color: rgba($color: #161616, $alpha: 0.9);
+        box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+        backdrop-filter: blur(3rem);
+        border: 0.1rem solid rgba($color: $white, $alpha: 0.1);
+        border-radius: 6rem;
+        color: $white;
+        .tit {
+          position: relative;
+          width: max-content;
+          margin: 0 auto 2rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 7rem;
+          font-weight: $semiBold;
+          letter-spacing: -0.02em;
+        }
+        .radio_status {
+          margin-bottom: 1.2rem;
+          font-size: 2.2rem;
+          font-weight: $semiBold;
+          text-align: center;
+          .radio_on {
+            display: block;
+          }
+          .radio_off {
+            display: none;
+          }
+        }
+        .radio_tit_box {
+          margin-top: 8.7rem;
+          text-align: center;
+          .radio_company {
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            .radio_on {
+              display: block;
+            }
+            .radio_off {
+              display: none;
+            }
+          }
+          .radio_tit {
+            font-size: 4rem;
+            letter-spacing: -0.02em;
+            .radio_on {
+              display: block;
+            }
+            .radio_off {
+              display: none;
+            }
+          }
+        }
+        .radio_play_btn_wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          width: 33.4rem;
+          margin: 6.3rem auto 0;
+          &::before {
+            transition: all 0.4s;
+            content: '';
+            pointer-events: none;
+            display: block;
+            position: absolute;
+            bottom: -12rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 56.2rem;
+            height: 23.8rem;
+            background: url(../images/main/radio_bg.png) no-repeat center/cover;
+          }
+          button {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 5.8rem;
+            height: 5.8rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &.btn_prev {
+              background-image: url(../images/main/radio_prev.svg);
+            }
+            &.btn_next {
+              transform: scaleX(-1);
+              background-image: url(../images/main/radio_prev.svg);
+            }
+            &.btn_play {
+              background-image: url(../images/main/radio_play.svg);
+              &.stop {
+                background-image: url(../images/main/radio_stop.svg);
+              }
+            }
+          }
+        }
+        .frequency_wrap {
+          display: flex;
+          gap: 7.5rem;
+          align-items: center;
+          width: 46.3rem;
+          margin: 10rem auto 0;
+          .frequency_btn_wrap {
+            display: flex;
+            gap: 2.2rem;
+            flex-direction: column;
+            .btn_frequency {
+              display: block;
+              transition: all 0.4s;
+              font-family: $font-PlusJakartaSans;
+              font-size: 2.6rem;
+              font-weight: $light;
+              letter-spacing: -0.02em;
+              color: rgba($color: $white, $alpha: 0.2);
+              &.active {
+                color: #686FFF;
+              }
+            }
+          }
+          .frequency_num_wrap {
+            transition: all 0.4s;
+            display: flex;
+            align-items: flex-end;
+            font-family: $font-PlusJakartaSans;
+            font-size: 3rem;
+            font-weight: $light;
+            letter-spacing: -0.02em;
+            .frequency_num {
+              font-size: 8rem;
+            }
+            .frequency_unit {
+              padding-bottom: 1rem;
+            }
+          }
+        }
+        .radio_volume_wrap {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          width: 46.3rem;
+          margin: 5rem auto 0;
+          .radio_volume {
+            width: 7.8rem;
+            font-size: 3.2rem;
+            letter-spacing: -0.02em;
+          }
+          .btn_volume {
+            display: block;
+            width: 5.8rem;
+            height: 5.8rem;
+            margin-left: auto;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            &.down {
+              background-image: url(../images/main/radio_volume_down.svg);
+            }
+            &.up {
+              background-image: url(../images/main/radio_volume_up.svg);
+            }
+          }
+          input[type='range'] {
+            overflow: hidden;
+            width: 21.2rem;
+            height: 0.6rem;
+            background-color: rgba($color: $white, $alpha: 0.1);
+            -webkit-appearance: none;
+            appearance: none;
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 0;
+              height: 0;
+            }
+            &::-moz-range-thumb {
+              width: 0;
+              height: 0;
+              border: none;
+            }
+            &::-webkit-slider-runnable-track {
+              height: 0.6rem;
+              background: linear-gradient(
+                to right,
+                #fff calc(var(--val, 0%) * 1%),
+                rgba(255, 255, 255, 0.1) 0
+              );
+            }
+          }
+        }
+        &.radio_off {
+          .radio_status {
+            .radio_on {
+              display: none;
+            }
+            .radio_off {
+              display: block;
+              opacity: 0.2;
+            }
+          }
+          .radio_tit_box {
+            .radio_company,
+            .radio_tit {
+              .radio_on {
+                display: none;
+              }
+              .radio_off {
+                display: block;
+                opacity: 0.2;
+              }
+            }
+          }
+          .radio_play_btn_wrap {
+            &::before {
+              opacity: 0;
+            }
+          }
+          .frequency_wrap {
+            .btn_frequency {
+              &.active {
+                color: rgba(255, 255, 255, 0.2);
+              }
+            }
+            .frequency_num_wrap {
+              opacity: 0.2;
+            }
+          }
+        }
+      }
+      .voice_searching_box {
+        pointer-events: none;
+        overflow: hidden;
+        transform: translateY(40%);
+        opacity: 0;
+        transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: $white, $alpha: 0.1);
+        box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+        backdrop-filter: blur(7rem);
+        border: 0.1rem solid rgba($color: $white, $alpha: 0.1);
+        border-radius: 6rem;
+        color: $white;
+        .box_head {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5rem 5rem 3rem;
+          .ic_star {
+            width: 6rem;
+            height: 6rem;
+            background: url(../images/main/searching_ic.svg) no-repeat center/cover;
+          }
+          .btn_searching_close {
+            transition: all 0.2s;
+            display: block;
+            width: 8rem;
+            height: 8rem;
+            background: $white url(../images/main/ic_close.svg) no-repeat center/2.9rem 2.9rem;
+            border-radius: 50%;
+            backdrop-filter: blur(7rem);
+            box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.25);
+            &:active {
+              transform: scale(1.1) rotate(45deg);
+              background: $white url(../images/main/ic_close_gray.svg) no-repeat center/2.9rem 2.9rem;
+            }
+          }
+        }
+        .searching_txt_box {
+          position: relative;
+          overflow: hidden;
+          .box_inner {
+            overflow-y: auto;
+            position: relative;
+            width: calc(100% - 4rem);
+            height: 102.9rem;
+            margin: 0 auto;
+            padding: 0 3rem 5rem 4rem;
+            &::-webkit-scrollbar {
+              width: 1rem;
+            }
+            &::-webkit-scrollbar-track {
+              background-color: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: rgba($color: #D9D9D9, $alpha: 0.3); 
+              border-radius: 2rem;
+            }
+            .searching_txt {
+              font-size: 3.2rem;
+              font-weight: $light;
+              line-height: 6rem;
+              letter-spacing: -0.02em;
+            }
+          }
+          &::before,
+          &::after {
+            pointer-events: none;
+            transition: opacity 0.4s;
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 21rem;
+            background: linear-gradient(180deg, rgba(37, 37, 37, 0) 0%, #252525 100%);
+          }
+          &::before {
+            opacity: 0;
+            top: -0.1rem;
+            bottom: auto;
+            background: linear-gradient(0deg, rgba(26, 26, 26, 0) 0%, #131313 100%);
+          }
+          &.scrolling {
+            &::before {
+              opacity: 1;
+            }
+          }
+          &.is_end {
+            &::after {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+    .btn_close {
+      transition: all 0.2s;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: $white url(../images/main/ic_close.svg) no-repeat center;
+      box-shadow: 0 1rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+      backdrop-filter: blur(7rem);
+      &:active {
+        transform: scale(1.1) rotate(45deg);
+        background: $white url(../images/main/ic_close_gray.svg) no-repeat center;
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &.has_airshower {
+    .voice_command_wrap {
+      .voice_command_box {
+        .voice_airshower_box {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &.has_lighting {
+    .voice_command_wrap {
+      .voice_command_box {
+        .voice_lighting_box {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &.has_airdry {
+    .voice_command_wrap {
+      .voice_command_box {
+        .voice_airdry_box {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &.has_radio {
+    .voice_command_wrap {
+      .voice_command_box {
+        .voice_radio_box {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &.has_searching {
+    height: calc(100% - 52rem);
+    .voice_command_wrap {
+      padding-top: 0;
+      .voice_command_box {
+        width: 100rem;
+        height: 118.9rem;
+        .voice_searching_box {
+          pointer-events: auto;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .btn_close {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no,maximum-scale=1"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>SPEP - classRoom</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/plugin/swiper-bundle.min.css" />
+
+    <!-- Flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+
+    <!-- JS -->
+    <script src="../../assets/js/plugin/jquery-3.5.1.min.js"></script>
+    <script src="../../assets/js/plugin/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../../assets/js/plugin/chart.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header id="header"></header>
+      <div id="moHeader"></div>
+
+      <main class="container class" id="classRoom">
+        <section class="common_tit_wrap">
+          <div class="content_wrap">
+            <h3>Class Room</h3>
+          </div>
+        </section>
+        <section class="category_content">
+          <div class="content_wrap">
+            <p class="tit">수강중인 과목</p>
+            <div class="swiper categorycommonSwiper">
+              <div class="swiper-btn-wrap common_swiper_btn">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category active"><span class="target">Lv. 1~2, 35점 목표</span>S.P.A. Prep The Basic Course</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">S.P.A. Prep The Basic Course</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #3 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #4 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">
+                      <span class="target">Lv. 1~2, 35점 목표</span>S.P.A. Prep The Basic Course
+                    </button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #6 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #7 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #8 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #9 Name</button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn_category">category #10 Name</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="common_basic_course">
+          <div class="content_wrap">
+            <div class="tit_wrap">
+              <h5>S.P.A. Prep The Basic Course</h5>
+            </div>
+            <div class="course_box">
+              <div class="course_list">
+                <p>
+                  <span class="sort">과정명</span>
+                  <span class="detail">현대차/기아 24</span>
+                </p>
+                <p>
+                  <span class="sort">과목</span>
+                  <span class="detail">S.P.A. Prep The Basic Course [Lv. 1~2, 35점 목표]</span>
+                </p>
+                <p>
+                  <span class="sort">시간</span>
+                  <span class="detail">수요일 06:00 ~ 06:30</span>
+                </p>
+              </div>
+              <div class="course_list">
+                <p>
+                  <span class="sort">교육기간</span>
+                  <span class="detail">2024. 10.14 ~ 2024. 12. 27</span>
+                </p>
+                <p>
+                  <span class="sort">강사명</span>
+                  <span class="detail">Robert Downey Jr.</span>
+                </p>
+                <p>
+                  <span class="sort">장소</span>
+                  <span class="detail">SPEP Center / 205호</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="attendance_status">
+          <div class="content_wrap">
+            <div class="tit_wrap">
+              <h5>출결 현황을 확인하세요</h5>
+            </div>
+            <div class="tab_wrap">
+              <div class="tab_btn_wrap">
+                <button class="btn_tab active" data-tab="tab1">이번달 출결 현황</button>
+                <button class="btn_tab" data-tab="tab2">월별 출결 현황</button>
+              </div>
+              <div class="tab_contents">
+                <div class="tab_content active" id="tab1">
+                  <div class="month_wrap this_month">
+                    <div class="status_wrap">
+                      <div class="point_wrap">
+                        <p class="tit">이번달 출결 현황</p>
+                        <p class="desc">접속일 기준 해당 년/월의 출결 현황이 나타납니다.</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">차수 실제 출석률</p>
+                        <p class="percent">100%</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">
+                          인정 출석률
+                          <span class="info">
+                            출결 인정 사유 <strong>반영</strong>
+                          </span>
+                        </p>
+                        <p class="percent">70%</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">
+                          실제 출석률
+                          <span class="info">
+                            출결 인정 사유 <strong>미반영</strong>
+                          </span>
+                        </p>
+                        <p class="percent">70%</p>
+                      </div>
+                    </div>
+                    <!-- 해당 차트는 다른 차트 라이브러리 사용 -->
+                    <div class="chart_wrap">
+                      <p class="month_txt">2024년 12월<span>이번달</span></p>
+                      <div class="chart_box">
+                        <div id="thisMonthChart"></div>
+                        <p class="chart_txt">2024년 12월</p>
+                      </div>
+                      <ul class="color_desc">
+                        <li class="blue">차수 실제 출석률</li>
+                        <li class="purple">인정 출석률</li>
+                        <li class="green">실제 출석률</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab_content" id="tab2">
+                  <div class="month_wrap total_month">
+                    <div class="status_wrap">
+                      <div class="point_wrap">
+                        <p class="tit">이번달 출결 현황</p>
+                        <p class="desc">접속일 기준 해당 년/월의 출결 현황이 나타납니다.</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">차수 실제 출석률</p>
+                        <p class="percent">100%</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">
+                          인정 출석률
+                          <span class="info">
+                            출결 인정 사유 <strong>반영</strong>
+                          </span>
+                        </p>
+                        <p class="percent">70%</p>
+                      </div>
+                      <div class="common_status_wrap">
+                        <p class="tit">
+                          실제 출석률
+                          <span class="info">
+                            출결 인정 사유 <strong>미반영</strong>
+                          </span>
+                        </p>
+                        <p class="percent">70%</p>
+                      </div>
+                    </div>
+                    <div class="month_status">
+                      <div class="month_choice">
+                        <p class="tit">2024년 4월</p>
+                        <input type="text" id="monthPicker" class="month_picker" placeholder="연/월 선택" readonly>
+                      </div>
+                      <div class="month_detail_list">
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status work">업무</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status attendance">출석</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status absence">결석</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status attendance">출석</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status attendance">출석</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress complete">진행완료</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>06:00 ~ 06:30</span>
+                          </span>
+                          <span class="status attendance">출석</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress">진행예정</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>-</span>
+                          </span>
+                          <span class="status">-</span>
+                        </a>
+                        <a href="javascript:void(0)" class="month_detail">
+                          <span class="progress">진행예정</span>
+                          <span class="date">2024년 12월 01일</span>
+                          <span class="time">
+                            <span>클래스 진행 시간</span>
+                            <span>-</span>
+                          </span>
+                          <span class="status">-</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="common_focus_area">
+          <div class="content_wrap">
+            <div class="tit_wrap">
+              <h5>Feedback
+                <span class="info">접속일 기준 해당 월의 종합 그래프가 나타납니다.</span>
+              </h5>
+              <a href="./feedback.html" title="전체보기" class="btn_all_view">전체보기</a>
+            </div>
+            <div class="swiper commonFocusAreaSwiper">
+              <div class="swiper-btn-wrap common_swiper_btn">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="progress_wrap">
+                      <div class="desc_wrap">
+                        <p class="tit">Fluency</p>
+                        <p class="date">2024년 12월</p>
+                      </div>
+                      <div class="progress_bar original">
+                        <div class="progress_current"></div>
+                        <div class="avg">avg</div>
+                        <div class="date">19일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="progress_wrap">
+                      <div class="desc_wrap">
+                        <p class="tit">Fluency</p>
+                        <p class="date">2024년 12월</p>
+                      </div>
+                      <div class="progress_bar original">
+                        <div class="progress_current"></div>
+                        <div class="avg">avg</div>
+                        <div class="date">19일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="progress_wrap">
+                      <div class="desc_wrap">
+                        <p class="tit">Fluency</p>
+                        <p class="date">2024년 12월</p>
+                      </div>
+                      <div class="progress_bar original">
+                        <div class="progress_current"></div>
+                        <div class="avg">avg</div>
+                        <div class="date">19일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="progress_wrap no_data">
+                      <div class="no_data_box">
+                        더이상 확인 가능한 평가가 없습니다.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main> 
+      <footer id="footer"></footer>
+      <div id="modalContainer"></div>
+    </div>
+    <script>
+      $("#header").load("../../include/header.html");
+      $("#moHeader").load("../../include/header_mo.html");
+      $("#footer").load("../../include/footer.html");
+
+      document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#monthPicker", {
+          plugins: [
+            new monthSelectPlugin({
+              shorthand: false, 
+              dateFormat: "Y년 m월",
+              altFormat: "Y년 n월", 
+              theme: "light"
+            })
+          ],
+          static: true, 
+          locale: "ko",
+          disableMobile: true
+        });
+      })
+
+    </script>
+    <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/class.js"></script>
+  </body>
+</html>

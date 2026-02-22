@@ -1,0 +1,185 @@
+.container {
+  &.teachers {
+    .content_wrap {
+      max-width: 144.6rem;
+      width: 100%;
+      padding: 0 1.6rem;
+      margin: auto;
+    }
+
+    &#teacherLogin {
+      display: flex;
+      height: 100vh;
+      padding-left: 0;
+      .teacher_commont_tit {
+        display: none;
+      }
+      .visual {
+        flex: 1;
+        background: url(../images/teachers/login/bg_login.png) no-repeat
+          center/cover;
+      }
+      .login_wrap {
+        flex: 1;
+        position: relative;
+        padding: 1.6rem;
+        background-color: #fafafa;
+        .login_box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          max-width: 49.7rem;
+          width: 100%;
+          text-align: center;
+          .logo {
+            width: 13.5rem;
+            margin: 0 auto 1.6rem;
+          }
+          .desc {
+            margin-bottom: 4.4rem;
+            font-size: 1.6rem;
+            font-weight: $medium;
+            line-height: 2.6rem;
+            letter-spacing: -0.04em;
+            color: #767676;
+          }
+          .input_wrap {
+            .input_group {
+              ~ .input_group {
+                margin-top: 2rem;
+              }
+              label {
+                display: none;
+              }
+              input {
+                width: 100%;
+                height: 5rem;
+                padding: 0 1.6rem;
+                background-color: $white;
+                border: 0.1rem solid #ececec;
+                border-radius: 0.6rem;
+                font-size: 1.6rem;
+                color: #252525;
+                &::placeholder {
+                  color: #777777;
+                }
+              }
+            }
+          }
+          .help_wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.6rem;
+            .chechbox_group {
+              input[type="checkbox"] {
+                display: none;
+                &:checked {
+                  ~ label {
+                    &::before {
+                      background-image: url(../images/teachers/login/ic_checkbox_active.svg);
+                    }
+                  }
+                }
+              }
+              label {
+                display: flex;
+                gap: 0.9rem;
+                align-items: center;
+                font-size: 1.4rem;
+                font-weight: $medium;
+                letter-spacing: -0.04em;
+                color: $black;
+                &::before {
+                  content: "";
+                  display: block;
+                  width: 2rem;
+                  height: 2rem;
+                  background: url(../images/teachers/login/ic_checkbox.svg)
+                    no-repeat center/cover;
+                  box-sizing: border-box;
+                }
+              }
+            }
+            .forget_pwd {
+              display: block;
+              font-size: 1.4rem;
+              font-weight: $medium;
+              letter-spacing: -0.04em;
+              color: #999999;
+            }
+          }
+          .btn_login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 6rem;
+            margin-top: 6.4rem;
+            background-color: $point;
+            border-radius: 0.8rem;
+            backdrop-filter: blur(7rem);
+            font-size: 1.6rem;
+            font-weight: $bold;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1280px) {
+      &#teacherLogin {
+        .login_wrap {
+          .login_box {
+            max-width: 35rem;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      &#teacherLogin {
+        height: calc(var(--vh, 1vh) * 100);
+        .visual {
+          display: none;
+        }
+        .login_wrap {
+          .login_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            max-width: 100%;
+            // height: 100vh;
+            height: calc(var(--vh, 1vh) * 100);
+            padding: 0 1.6rem;
+            .logo {
+              margin-bottom: 1.8rem;
+            }
+            .desc {
+              margin-bottom: 4.6rem;
+              font-size: 1.4rem;
+              line-height: 2.4rem;
+            }
+            .input_wrap {
+              .input_group {
+                ~ .input_group {
+                  margin-top: 1.2rem;
+                }
+              }
+            }
+            .help_wrap {
+              margin-top: 2rem;
+            }
+            .btn_login {
+              margin-top: 7.2rem;
+              height: 6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

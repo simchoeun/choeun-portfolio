@@ -1,0 +1,54 @@
+<div class="content_wrap">
+  <nav>
+    <ul>
+      <li>
+        <a href="/index.html" title="" class="depth1">홈</a>
+      </li>
+      <li>
+        <a href="/html/mobileLearning/mobilelearning.html" title="" class="depth1">모바일러닝</a>
+      </li>
+      <li>
+        <a href="/html/class/class.html" title="" class="depth1">클래스</a>
+      </li>
+      <li>
+        <a href="/html/chat/chat.html" title="" class="depth1">채팅</a>
+      </li>
+      <li>
+        <a href="/html/mypage/mypage.html" title="" class="depth1">My</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  let currentMoPage = window.location.pathname.split("/").pop() || "index";
+  const moNavLinks = document.querySelectorAll('#moHeader nav ul li a.depth1');
+
+  if (currentMoPage === 'index.html' || currentMoPage === 'index_student.html' || currentMoPage === '' || currentMoPage === 'index' || currentMoPage === 'index_student') {
+    if(moNavLinks[0]) {
+      moNavLinks[0].classList.add('active');
+    }
+  } else if (window.location.pathname.includes('/mobileLearning/')) {
+    moNavLinks.forEach(link => link.classList.remove('active')); 
+    if (moNavLinks[1]) {
+      moNavLinks[1].classList.add('active');
+    } 
+  }  else if (window.location.pathname.includes('/class/')) {
+    moNavLinks.forEach(link => link.classList.remove('active')); 
+    if (moNavLinks[2]) {
+      moNavLinks[2].classList.add('active');
+    } 
+  } else if (window.location.pathname.includes('/chat/')) {
+    moNavLinks.forEach(link => link.classList.remove('active')); 
+    if (moNavLinks[3]) {
+      moNavLinks[3].classList.add('active');
+    } 
+  } else if (currentMoPage === 'mypage.html') {
+    moNavLinks.forEach(link => link.classList.remove('active')); 
+    if (moNavLinks[4]) {
+      moNavLinks[4].classList.add('active');
+    } 
+  } else {
+    moNavLinks.forEach(link => link.classList.remove('active'));
+  }
+</script>

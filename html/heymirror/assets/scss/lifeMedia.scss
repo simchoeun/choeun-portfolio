@@ -1,0 +1,253 @@
+#lifeMedia {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translateY(20%);
+  transition: all 0.4s ease-out 0.2s;
+  background-color: $black;
+  width: 100%;
+  height: calc(100% - 12rem);
+  .lifemedia_site_wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .top_btn_wrap {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 14rem;
+      padding: 4rem;
+      background-color: $black;
+      .volume_btn_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 22.1rem;
+        .btn_volume {
+          display: block;
+          width: 4.8rem;
+          height: 4.8rem;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          &.down {
+            background-image: url(../images/main/ic_lifemedia_volume_down.svg);
+          }
+          &.up {
+            background-image: url(../images/main/ic_lifemedia_volume_up.svg);
+          }
+        }
+        .volume_num {
+          font-size: 2.2rem;
+          letter-spacing: -0.02em;
+          color: rgba($color: $white, $alpha: 0.4);
+        }
+      }
+      .link_btn_box {
+        display: flex;
+        gap: 1rem;
+        margin-left: auto;
+        .btn_link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 14rem;
+          height: 6rem;
+          background-color: #0F0F10;
+          border: 0.1rem solid rgba($color: $white, $alpha: 0.06);
+          border-radius: 6rem;
+        }
+      }
+      .btn_close {
+        transition: all 0.2s;
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        margin-left: 4rem;
+        background: $white url(../images/main/ic_close.svg) no-repeat center/1.9rem;
+        box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(7rem);
+        border-radius: 50%;
+        &:active {
+          transform: scale(1.1) rotate(45deg);
+          background: $white url(../images/main/ic_close_gray.svg) no-repeat center/1.9rem;
+        }
+      }
+    }
+    .search_wrap {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+      height: 7rem;
+      padding: 1rem 4rem;
+      background-color: $white;
+      .prev_next_btn {
+        display: flex;
+        gap: 4rem;
+        position: relative;
+        &::before {
+          content: '';
+          pointer-events: none;
+          display: block;
+          position: absolute;
+          top: 0.5rem;
+          left: 7rem;
+          width: 0.1rem;
+          height: 4rem;
+          background-color: #DFDFDF;
+        }
+        .btn_prev,
+        .btn_next {
+          display: block;
+          width: 5rem;
+          height: 5rem;
+          background: url(../images/main/ic_lifemedia_arrow.svg) no-repeat center/cover;
+        }
+        .btn_prev {
+          transform: scaleX(-1);
+        }
+      }
+      .search_box {
+        flex: 1;
+        input {
+          width: 100%;
+          height: 5rem;
+          background-color: #EDEDED;
+          border-radius: 1rem;
+          font-family: "Pretendard", sans-serif;
+          font-size: 2.2rem;
+          letter-spacing: -0.02em;
+          color: $black;
+          text-align: center;
+          &::placeholder {
+            color: $black;
+          }
+        }
+      }
+      .btn_refresh {
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        background: url(../images/main/ic_lifemedia_refresh.svg) no-repeat center/cover;
+      }
+    }
+    .site_wrap {
+      flex: 1;
+      overflow-y: auto;
+    }
+  }
+  .lifemedia_voice_wrap {
+    display: none;
+  }
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease-out 0.3s;
+  }
+  &.has_voice {
+    .lifemedia_voice_wrap {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 5rem;
+      .bg_top {
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 95.2rem;
+        background: radial-gradient(398.81% 77.75% at 50% 22.25%, rgba(0, 0, 0, 0.9) 0%, rgba(59, 59, 59, 0) 100%);
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          backdrop-filter: blur(0.4rem);
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%);
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%);
+        }
+      }
+      .bg_bottom {
+        pointer-events: none;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 84.8rem;
+        transform: rotate(180deg);
+        background: linear-gradient(180deg, rgba(59, 59, 59, 0.9) 0%, rgba(59, 59, 59, 0) 50%);
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          backdrop-filter: blur(0.4rem);
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%);
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 82%);
+        }
+      }
+      .voice_box {
+        position: relative;
+        z-index: 2;
+        padding: 20rem 2rem 10rem;
+        text-align: center;
+        .voice_img {
+          width: 11.5rem;
+          margin: 0 auto;
+        }
+        .voice_txt {
+          margin-top: 3rem;
+          font-size: 4.2rem;
+          font-weight: $light;
+          line-height: 3.2rem;
+        }
+      }
+      .voice_status {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        width: max-content;
+        height: 8rem;
+        padding: 0 3rem;
+        margin: auto auto 0;
+        background-color: #0F1019;
+        border: 0.1rem solid #303256;
+        border-radius: 6rem;
+        box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.25);
+        font-size: 2.2rem;
+        letter-spacing: -0.02em;
+        color: $white;
+        &::before {
+          content: '';
+          display: block;
+          width: 2.4rem;
+          height: 2.4rem;
+          background: url(../images/main/ic_voice_listening.svg) no-repeat center/cover;
+        }
+      }
+    }
+  }
+}

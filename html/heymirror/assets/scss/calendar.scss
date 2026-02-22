@@ -1,0 +1,582 @@
+#calendarWrap {
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transform: translateY(20%);
+  transition: all 0.4s ease-out 0.2s;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  border-radius: 6rem;
+  color: $black;
+  .top_wrap {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    width: 100%;
+    padding: 3.5rem 4rem 2rem;
+    .top_tit {
+      position: absolute;
+      top: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.8rem;
+      font-weight: $medium;
+      line-height: 3.2rem;
+    }
+    .btn_more {
+      display: block;
+      width: 8rem;
+      height: 8rem;
+      background-color: $white;
+      background-image: url(../images/main/ic_more.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      transition: all 0.2s;
+      &:active {
+        background-image: url(../images/main/ic_more_active.svg);
+        backdrop-filter: blur(7rem);
+        box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.12);
+      }
+    }
+    .btn_close {
+      display: block;
+      width: 8rem;
+      height: 8rem;
+      background-color: $white;
+      background-image: url(../images/main/ic_close_calendar.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      transition: transform 0.4s;
+      &:active {
+        background-image: url(../images/main/ic_close_calendar_active.svg);
+        backdrop-filter: blur(7rem);
+        box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.12);
+        transform: rotate(45deg);
+      }
+    }
+  }
+  .tab_all_btn_wrap {
+    display: flex;
+    position: relative;
+    width: 16.4rem;
+    height: 7rem;
+    margin: 0 auto;
+    padding: 0.4rem;
+    background-color: #EDEDED;
+    border-radius: 4rem;
+    .btn_all_tab {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: '';
+        opacity: 0.3;
+        transition: all 0.4s;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+      }
+      &[data-tab="allTab1"] {
+        &::before {
+          background: url(../images/main/ic_calendar_month.svg) no-repeat center/cover;
+        }
+      }
+      &[data-tab="allTab2"] {
+        &::before {
+          background: url(../images/main/ic_calendar_list.svg) no-repeat center/cover;
+        }
+      }
+      &.active {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    .tab_indicator {
+      position: absolute;
+      top: 0.4rem;
+      bottom: 0.4rem;
+      z-index: 0;
+      width: 7.8rem;
+      height: 6.2rem;
+      background-color: $white;
+      border-radius: 4rem;
+      transition: transform 0.3s ease;
+    }
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0 4rem;
+    padding: 0 4rem;
+    .ym {
+      font-size: 6rem;
+      font-weight: $bold;
+      letter-spacing: -0.02em;
+    }
+    .action_btn_wrap {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      .btn_today {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10.2rem;
+        height: 6.2rem;
+        border: 0.1rem solid #DBDBDB;
+        border-radius: 4rem;
+        font-size: 2.4rem;
+        font-weight: $semiBold;
+        transition: all 0.2s;
+        &:active {
+          background-color: #EAEAEA;
+          color: #404146;
+        }
+      }
+      .btn_arrow {
+        display: block;
+        width: 7rem;
+        height: 7rem;
+        background-image: url(../images/main/ic_calendar_arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        transition: all 0.2s;
+        &#goPrev {
+          transform: scaleX(-1);
+        }
+        &:active {
+          background-color: $white;
+          background-image: url(../images/main/ic_calendar_arrow_active.svg);
+          background-size: 6rem 6rem;
+          backdrop-filter: blur(7rem);
+          box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+  }
+  .tab_contents {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    height: 143rem;
+    .tab_all_content {
+      flex-shrink: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s ease, opacity 1s ease;
+      .memo_card {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 32.3rem;
+        padding: 3rem;
+        background-color: #89D497;
+        box-shadow: 0 0.6rem 2rem 0 rgba(43, 43, 43, 0.2);
+        border-radius: 1rem;
+        &.bg_green {
+          background-color: #89D497;
+        }
+        &.bg_blue {
+          background-color: #A6CFF9;
+        }
+        &.bg_pink {
+          background-color: #F7AAAF;
+        }
+        &.bg_yellow {
+          background-color: #F5D68D;
+        }
+        &.bg_orange {
+          background-color: #F59C76;
+        }
+        .from_wrap {
+          display: flex;
+          gap: 0.4rem;
+          margin-bottom: 2rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 2rem;
+          line-height: 3.2rem;
+          font-weight: $extraBold;
+          color: rgba($color: $black, $alpha: 0.7);
+          .from_name {
+            font-family: "Pretendard", sans-serif;
+            font-weight: $bold;
+            line-height: 2.8rem;
+          }
+          .news_message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8rem;
+            height: 3rem;
+            margin-left: auto;
+            background-color: $black;
+            border-radius: 2rem;
+            font-family: "Pretendard", sans-serif;
+            font-size: 1.6rem;
+            font-weight: $bold;
+            color: $white;
+          }
+        }
+        .message {
+          font-size: 2.4rem;
+          font-weight: $medium;
+          line-height: 3.4rem;
+          letter-spacing: -0.02em;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;  
+          -webkit-box-orient: vertical;  
+          overflow: hidden;  
+          text-overflow: ellipsis;
+        }
+        .time_wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-top: 2rem;
+          .time_box {
+            display: flex;
+            gap: 1.7rem;
+            align-items: center;
+            font-size: 1.6rem;
+            font-weight: $medium;
+            color: rgba($color: $black, $alpha: 0.5);
+            .date {
+              position: relative;
+              &::after {
+                opacity: 0.2;
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0.4rem;
+                right: -0.9rem;
+                width: 0.1rem;
+                height: 1rem;
+                background-color: $black;
+              }
+            }
+          }
+          .profile {
+            overflow: hidden;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+      .panel {
+        #calendar {
+          height: 101.8rem;
+          table {
+            &.fc-scrollgrid {
+              border: none;
+            }
+            th {
+              border: none;
+              a {
+                padding: 2rem 0 2.3rem;
+                font-family: "Pretendard", sans-serif;
+                font-size: 2.2rem;
+                font-weight: $medium;
+                color: #A6A6A6;
+              }
+            }
+            td {
+              .fc-scroller-harness {
+                border-top: 0.1rem solid #DFDFDF;
+              }
+              .fc-scrollgrid-sync-table {
+                height: 94.8rem;
+              }
+            }
+            tbody {
+              height: 94.8rem;
+              tr {
+                height: 15.8rem;
+                td {
+                  border-color: #DFDFDF;
+                  .fc-daygrid-day-frame {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1.2rem 1.6rem 1.6rem;
+                    .fc-daygrid-day-top {
+                      justify-content: center;
+                      .fc-daygrid-day-number {
+                        width: 3.6rem;
+                        height: 3.6rem;
+                        padding: 0;
+                        font-family: $font-PlusJakartaSans;
+                        font-size: 2rem;
+                        font-weight: $semiBold;
+                        line-height: 3.6rem;
+                        color: #404146;
+                        text-align: center;
+                      }
+                    }
+                    .fc-daygrid-day-events {
+                      flex: 1;
+                      display: flex;
+                      gap: 0.6rem;
+                      flex-direction: column;
+                      margin: 0;
+                      &::before,
+                      &::after {
+                        display: none;
+                      }
+                      .fc-daygrid-day-bottom {
+                        display: none;
+                        margin: 0;
+                      }
+                      .fc-event {
+                        margin: 0;
+                        background-color: $white !important;
+                        border: none;
+                        color: $black;
+                        .fc-event-title-container {
+                          display: flex;
+                          gap: 0.7rem;
+                          align-items: center;
+                          &::before {
+                            content: '';
+                            flex-shrink: 0;
+                            display: block;
+                            width: 0.8rem;
+                            height: 0.8rem;
+                            background-color: var(--dot-color, transparent); 
+                            border-radius: 50%;
+                          }
+                          .fc-event-title {
+                            flex: 1;
+                            position: static;
+                            padding: 0;
+                            font-family: "Pretendard", sans-serif;
+                            font-size: 1.8rem;
+                            font-weight: $semiBold;
+                            color: $black;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                          }
+                        }
+                      }
+                    }
+                    &.has_memo {
+                      &::after {
+                        display: none;
+                      }
+                      .memo_num {
+                        display: flex;
+                        gap: 0.5rem;
+                        justify-content: flex-end;
+                        align-items: center;
+                        font-family: "Pretendard", sans-serif;
+                        font-size: 1.8rem;
+                        font-weight: $semiBold;
+                        color: #686FFF;
+                        &::before {
+                          content: '';
+                          display: block;
+                          width: 1.6rem;
+                          height: 1.6rem;
+                          background: url(../images/main/ic_calendar_memo_blue.svg) no-repeat center/cover;
+                        }
+                      }
+                    }
+                  }
+                  .fc-day-other {
+                    .fc-daygrid-day-top {
+                      opacity: 1;
+                      .fc-daygrid-day-number {
+                        color: #A6A6A6;
+                      }
+                    }
+                  }
+                  .fc-daygrid-day.fc-day-today {
+                    background-color: $white;
+                    .fc-daygrid-day-frame {
+                      .fc-daygrid-day-top {
+                        .fc-daygrid-day-number {
+                          background-color: $black;
+                          border-radius: 50%;
+                          color: $white;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        &.memo_bar {
+          .memo_head {
+            padding: 4.2rem 4rem 2.6rem;
+            .label {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              font-size: 2.8rem;
+              font-weight: $semiBold;
+              letter-spacing: -0.02em;
+              color: #404146;
+              &::before {
+                content: '';
+                display: block;
+                width: 4rem;
+                height: 4rem;
+                background: url(../images/main/ic_calendar_memo.svg) no-repeat center/cover;
+              }
+            }
+          }
+          #memoSwiper {
+            padding: 0 4rem 2.5rem;
+            overflow: visible;
+            .swiper-wrapper {
+              overflow: visible;
+              .swiper-slide {
+                width: 32.3rem;
+              }
+            }
+          }
+        }
+      }
+      .detail_day_box {
+        overflow: hidden;
+        display: flex;
+        height: 140.8rem;
+        border-top: 0.1rem solid #DFDFDF;
+        .detail_day_list {
+          grid-auto-rows: 8px; 
+          overflow-x: hidden;
+          overflow-y: auto;
+          width: 33.8rem;
+          padding: 4rem;
+          border-right: 0.1rem solid #DFDFDF;
+          .detail_day_item {
+            ~ .detail_day_item {
+              margin-top: 2rem;
+            }
+            .day {
+              display: flex;
+              gap: 1rem;
+              align-items: center;
+              margin-bottom: 2rem;
+              font-size: 2.4rem;
+              font-weight: $semiBold;
+              color: #A6A6A6;
+              .today_txt {
+                font-size: 2rem;
+                font-weight: $bold;
+                color: #686FFF;
+              }
+            }
+            .detail_list {
+              padding: 1rem 0rem 1rem 3rem;
+              border-left: 0.1rem solid #DFDFDF;
+              .detail_txt {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                position: relative;
+                font-size: 2.2rem;
+                font-weight: $medium;
+                ~ .detail_txt {
+                  margin-top: 2rem;
+                }
+                &::before {
+                  content: '';
+                  flex-shrink: 0;
+                  display: block;
+                  width: 1rem;
+                  height: 1rem;
+                  background-color: #007F18;
+                  border-radius: 50%;
+                }
+                &.green {
+                  &::before {
+                    background-color: #007F18;
+                  }
+                }
+                &.yellow {
+                  &::before {
+                    background-color: #FFA600;
+                  }
+                }
+                &.red {
+                  &::before {
+                    background-color: #E82E2E;
+                  }
+                }
+              }
+            }
+            &.today {
+              .day {
+                color: $black;
+              }
+              .detail_list {
+                .detail_txt {
+                  margin-left: -2rem;
+                  padding: 1.4rem 2rem;
+                  background-color: $black;
+                  border-radius: 5rem;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+        .detail_memo_list {
+          overflow-x: hidden;
+          overflow-y: auto;
+          flex: 1;
+          column-count: 2;
+          column-gap: 1.6rem; 
+          padding: 4rem;
+          .memo_card {
+            height: auto;
+            margin-bottom: 1.6rem;
+            .message {
+              display: block;
+              -webkit-line-clamp: unset;
+              -webkit-box-orient: unset;
+              text-overflow: clip;
+              white-space: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease-out 0.3s;
+  }
+}

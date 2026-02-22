@@ -1,0 +1,544 @@
+<!-- Modal : 안내 모달 -->
+<div id="infoModal" class="modal">
+  <!-- 알림 모달 경우 modal_info 클래스 필요 -->
+  <div class="modal_content modal_info">
+    <div class="info_wrap">
+      <div class="img_wrap">
+        <img src="/assets/images/modal/ic_info.svg" alt="">
+      </div>
+      <p class="info_desc">
+        이 영역은 안내텍스트 영역입니다. <br class="pc_hidden">이 영역은 <span class="point">안내 텍스트 영역</span>입니다. <br class="pc_hidden">텍스트 영역을 확인해주세요. 감사합니다.
+      </p>
+    </div>
+    <div class="btn_wrap">
+      <button type="button" class="btn_close btn_gray">취소</button>
+      <button type="button" class="btn_blue">확인</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : 안내 모달 (타이머) -->
+<div id="infoTimerModal" class="modal">
+  <!-- 알림 모달 경우 modal_info 클래스 필요 -->
+  <div class="modal_content modal_info">
+    <div class="info_wrap">
+      <div class="img_wrap">
+        <img src="/assets/images/modal/ic_info.svg" alt="">
+      </div>
+      <p class="info_desc">
+        이 영역은 안내텍스트 영역입니다. <br class="pc_hidden">이 영역은 <span class="point">안내 텍스트 영역</span>입니다. <br class="pc_hidden">텍스트 영역을 확인해주세요. 감사합니다.
+      </p>
+    </div>
+    <div class="btn_wrap">
+      <button type="button" class="btn_gray">
+        <strong>3초</strong> 후 창이 닫힙니다.
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : topic 모달 -->
+<div id="topicModal" class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="tit_wrap">
+        <h3>Topic 선택</h3>
+        <button type="button" class="btn_close btn_close_ic"></button>
+      </div>
+      <div class="toppic_info">
+        <p class="topic_choice">
+          선택한 토픽 수 : 
+          <span class="topic_num">2개</span>
+        </p>
+        <p class="desc">*8개 선택 필수</p>
+      </div>
+    </div>
+    <div class="scroll_box">
+      <div class="checkbox_wrap">
+        <div class="checkbox_box">
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic01" name="topic" value="Topic 1">
+            <label for="topic01">Topic 1</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic02" name="topic" value="Topic 2">
+            <label for="topic02">Topic 2</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic03" name="topic" value="Topic 3">
+            <label for="topic03">Topic 3</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic04" name="topic" value="Topic 4">
+            <label for="topic04">Topic 4</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic05" name="topic" value="Topic 5">
+            <label for="topic05">Topic 5</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic06" name="topic" value="Topic 6">
+            <label for="topic06">Topic 6</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic07" name="topic" value="Topic 7">
+            <label for="topic07">Topic 7</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="topic08" name="topic" value="Topic 8">
+            <label for="topic08">Topic 8</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn_wrap">
+      <button type="button" class="btn_blue openModalBtn" data-modal="mobileLearningModal">선택 완료</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : 모바일 학습 사전 신청 모달 -->
+<div id="mobileLearningModal" class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="tit_wrap">
+        <h3>SPEP APP 모바일 학습 사전 신청</h3>
+        <button type="button" class="btn_close btn_close_ic"></button>
+      </div>
+      <ul class="mobile_info">
+        <li>
+          SPEP APP은 사내어학화정 수업 진도에 맞춘 학습 패키지, 모바일 전용 콘텐츠 외 
+          다양한 서비스를 제공해 드립니다.
+        </li>
+        <li>
+          SPEP APP 러닝의 맞춤형 콘텐츠로 개인화된 학습 경험을 통해 최상의 학습효과를 
+          경험하시기 바랍니다.
+        </li>
+      </ul>
+    </div>
+    <div class="scroll_box">
+      <!-- radio에 icon 있을경우 has_icon 클래스 필수 -->
+      <div class="radio_wrap has_icon">
+        <p class="radio_tit">교육 기간 내 모바일 학습을 하시겠습니까?</p>
+        <div class="radio_box">
+          <div class="radio_group">
+            <input type="radio" id="mobileLearning01" name="mobileLearning" value="지금 신청할래요">
+            <label for="mobileLearning01">지금 신청할래요</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="mobileLearning02" name="mobileLearning" value="나중에 신청할래요">
+            <label for="mobileLearning02">나중에 신청할래요</label>
+          </div>
+        </div>
+      </div>
+      <div class="desc_box">
+        <p>
+          학습 신청 후 실제 학습을 진행하지 않을 경우 비용이 부과되지 않으며, 사전 신청하지 않은 경우에도 모바일 학습 메뉴에서 이용 동의를 하시면 학습이 가능합니다.
+        </p>
+        <p>
+          <strong>[ 모바일학습 주요기능 및 이용 안내 ]</strong>
+          -수업 전/후 교재 내용 자동 반복 듣기<br>
+          -핵심 어휘나 모르는 단어 및 문장 저장<br>
+          -다양한 질문에 대한 샘플 답변 및 녹음<br><br>
+
+          <strong>무료 사용</strong>
+          월별 모바일 학습률 80% 달성 시, 100% 회사 지원<br><br>
+
+          <strong>유료 사용</strong>
+          월별 모바일 학습률 80% 미만 시, 급여에서 2만 원 공제<br>
+          모바일 학습은 권 단위 패키지로 제공되며, 학습 기간 종료 후<br> 
+          추가 3개월 동안 해당 패키지를 이용하실 수 있습니다.
+        </p>
+      </div>
+      <div class="btn_wrap">
+        <!-- <button type="button" class="btn_blue">선택 완료</button> -->
+        <a href="/html/class/application_history.html" class="btn_blue">선택 완료</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : After-Class Review 모달 -->
+<div id="afterClassReviewModal" class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="tit_wrap">
+        <h3>After-Class Review</h3>
+        <button type="button" class="btn_close btn_close_ic"></button>
+      </div>
+      <ul class="class_wrap">
+        <li>
+          <p class="sort">강사</p>
+          <p class="detail">Natalie Portman</p>
+        </li>
+        <li>
+          <p class="sort">과목</p>
+          <p class="detail">Topic-based Discussions Course</p>
+        </li>
+      </ul>
+    </div>
+    <div class="scroll_box">
+      <div class="radio_wrap">
+        <p class="radio_tit">1. 수업의 난이도는 어떤가요?</p>
+        <div class="radio_box">
+          <div class="radio_group">
+            <input type="radio" id="afterClassLevel01" name="afterClassLevel" value="매우 쉽다">
+            <label for="afterClassLevel01">매우 쉽다</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClassLevel02" name="afterClassLevel" value="쉽다">
+            <label for="afterClassLevel02">쉽다</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClassLevel03" name="afterClassLevel" value="보통이다">
+            <label for="afterClassLevel03">보통이다</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClassLevel04" name="afterClassLevel" value="어렵다">
+            <label for="afterClassLevel04">어렵다</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClassLevel05" name="afterClassLevel" value="매우 어렵다">
+            <label for="afterClassLevel05">매우 어렵다</label>
+          </div>
+        </div>
+      </div>
+      <div class="radio_wrap">
+        <p class="radio_tit">2. 교육 중 가장 만족스러운 부분은 무엇인가요?</p>
+        <div class="radio_box has_flexwrap">
+          <div class="radio_group">
+            <input type="radio" id="afterClass01" name="afterClass" value="강사님의 강의 방식">
+            <label for="afterClass01">강사님의 강의 방식</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClass02" name="afterClass" value="교재 및 커리큘럼">
+            <label for="afterClass02">교재 및 커리큘럼</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClass03" name="afterClass" value="클래스 피드백">
+            <label for="afterClass03">클래스 피드백</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClass04" name="afterClass" value="최신 글로벌 토픽 & 콘텐츠">
+            <label for="afterClass04">최신 글로벌 토픽 & 콘텐츠</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClass05" name="afterClass" value="모바일 앱 학습">
+            <label for="afterClass05">모바일 앱 학습</label>
+          </div>
+        </div>
+      </div>
+      <!-- radio에 icon 있을경우 has_icon 클래스 필수 -->
+      <div class="radio_wrap has_icon">
+        <p class="radio_tit">3. 교육 중 아쉬운 부분은 무엇인가요?</p>
+        <div class="radio_box">
+          <div class="radio_group">
+            <input type="radio" id="afterClassReview01" name="afterClassReview" value="없어요">
+            <label for="afterClassReview01">없어요</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="afterClassReview02" name="afterClassReview" value="있어요">
+            <label for="afterClassReview02">있어요</label>
+          </div>
+        </div>
+        <!-- s:: 있어요 클릭 시 나오는 영역 -->
+        <div class="hidden_content" id="hiddenDiv">
+          <div class="radio_wrap">
+            <p>‘있어요’ 선택시 아래에서 선택해주세요</p>
+            <div class="radio_box has_flexwrap">
+              <div class="radio_group">
+                <input type="radio" id="reviewAfterClass01" name="reviewAfterClass" value="강사님의 강의 방식">
+                <label for="reviewAfterClass01">강사님의 강의 방식</label>
+              </div>
+              <div class="radio_group">
+                <input type="radio" id="reviewAfterClass02" name="reviewAfterClass" value="교재 및 커리큘럼">
+                <label for="reviewAfterClass02">교재 및 커리큘럼</label>
+              </div>
+              <div class="radio_group">
+                <input type="radio" id="reviewAfterClass03" name="reviewAfterClass" value="클래스 피드백">
+                <label for="reviewAfterClass03">클래스 피드백</label>
+              </div>
+              <div class="radio_group">
+                <input type="radio" id="reviewAfterClass04" name="reviewAfterClass" value="최신 글로벌 토픽 & 콘텐츠">
+                <label for="reviewAfterClass04">최신 글로벌 토픽 & 콘텐츠</label>
+              </div>
+              <div class="radio_group">
+                <input type="radio" id="reviewAfterClass05" name="reviewAfterClass" value="모바일 앱 학습">
+                <label for="reviewAfterClass05">모바일 앱 학습</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- e:: 있어요 클릭 시 나오는 영역 -->
+      </div>
+      <div class="desc_box">
+        <div class="img_wrap">
+          <img src="/assets/images/modal/ic_clock.svg" alt="">
+        </div>
+        <p>
+          이외 교육 관련 문의는 강사님과의 채팅 <br>
+          혹은 SPEP 고객센터(02-2179-5500)로 언제든지 연락하여 주시기를 바랍니다.
+        </p>
+      </div>
+      <div class="btn_wrap">
+        <button type="button" class="btn_blue">저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : 수강 신청 모달 -->
+<div id="classDetailModal" class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="tit_wrap">
+        <h3>[2024년] 24년 3차 사내어학과정</h3>
+        <button type="button" class="btn_close btn_close_ic"></button>
+      </div>
+      <ul class="class_info">
+        <li>
+          <p class="sort">과정명</p>
+          <p class="detail">E.S.P</p>
+        </li>
+        <li>
+          <p class="sort">신청기간</p>
+          <p class="detail">2024. 10.14 ~ 2024. 12. 27</p>
+        </li>
+        <li>
+          <p class="sort">교육기간</p>
+          <p class="detail">2024. 10.14 ~ 2024. 12. 27</p>
+        </li>
+      </ul>
+    </div>
+    <div class="scroll_box">
+      <div class="swiper classDetailSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/assets/images/modal/temp_slide.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/images/modal/temp_slide.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/images/modal/temp_slide.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/images/modal/temp_slide.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/images/modal/temp_slide.png" alt="">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <div class="btn_wrap">
+      <button type="button" class="btn_blue">신청하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : 교육만족도조사 모달 -->
+<div id="educationModal" class="modal">
+  <div class="modal_content">
+    <div class="modal_header">
+      <div class="tit_wrap">
+        <h3>
+          <span class="status">진행중</span>
+          <!-- 참여완료했을경우 -->
+          <!-- <span class="status complete">참여 완료</span> -->
+          2024년 3차 현대차/기아 사내어학과정 14주차 교육만족도조사
+        </h3>
+        <button type="button" class="btn_close btn_close_ic"></button>
+      </div>
+      <p class="date_wrap">
+        <span>설문기간</span>
+        <span class="date">2024-08-05 ~ 2024-12-20</span>
+      </p>
+    </div>
+    <div class="scroll_box">
+      <div class="desc_box">
+        교육기간 동안 귀하의 적극적인 참여와 열의에 감사 드립니다. <br class="mo_hidden">
+        본 교육과정에 대한 귀하의 의견을 솔직하게 작성하여 주시기 바랍니다.<br class="mo_hidden">
+        향후 과정 개선 등에 소중한 자료로 활용하겠습니다.<br class="mo_hidden">
+        감사합니다.
+      </div>
+      <div class="radio_wrap">
+        <p class="radio_tit">1. 교육에 불참하게 되는 경우가 발생했다면 주된 이유는 무엇입니까?</p>
+        <div class="radio_box has_flexwrap">
+          <div class="radio_group">
+            <input type="radio" id="attend01" name="attend" value="잦은 출장">
+            <label for="attend01">잦은 출장</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="attend02" name="attend" value="바쁜 업무">
+            <label for="attend02">바쁜 업무</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="attend03" name="attend" value="교육 장소가 멀어서">
+            <label for="attend03">교육 장소가 멀어서</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="attend04" name="attend" value="팀 내 눈치가 보여서">
+            <label for="attend04">팀 내 눈치가 보여서</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="attend05" name="attend" value="본인의 교육 참여 의지 부족">
+            <label for="attend05">본인의 교육 참여 의지 부족</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="attend06" name="attend" value="기타">
+            <label for="attend06">기타</label>
+          </div>
+        </div>
+      </div>
+      <div class="radio_wrap required">
+        <p class="radio_tit">
+          2. 예습을 위해 어느 정도의 시간을 투자하십니까? 
+          <span class="essential">(필수)</span>
+          <span class="hide_txt">*필수응답 항목입니다.</span>
+        </p>
+        <div class="radio_box has_flexwrap w50p">
+          <div class="radio_group">
+            <input type="radio" id="useTime01" name="useTime" value="주 1회, 1시간 이상">
+            <label for="useTime01">주 1회, 1시간 이상</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="useTime02" name="useTime" value="주 1회, 30분 내외">
+            <label for="useTime02">주 1회, 30분 내외</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="useTime03" name="useTime" value="주 1회, 30분 미만">
+            <label for="useTime03">주 1회, 30분 미만</label>
+          </div>
+          <div class="radio_group">
+            <input type="radio" id="useTime04" name="useTime" value="거의 안 함">
+            <label for="useTime04">거의 안 함</label>
+          </div>
+        </div>
+      </div>
+      <div class="checkbox_wrap">
+        <p class="checkbox_tit">3. 수업 전 무엇을 활용하여 예습 및 복습을 하십니까?</p>
+        <p class="checkbox_desc">복수응답 항목</p>
+        <div class="checkbox_box has_flexwrap">
+          <div class="checkbox_group">
+            <input type="checkbox" id="study01" name="study" value="SPEP 모바일 앱">
+            <label for="study01">SPEP 모바일 앱</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="study02" name="study" value="온라인 프로그램">
+            <label for="study02">온라인 프로그램</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="study03" name="study" value="교재">
+            <label for="study03">교재</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="study04" name="study" value="기타">
+            <label for="study04">기타</label>
+          </div>
+          <div class="checkbox_group">
+            <input type="checkbox" id="study05" name="study" value="사전 학습 안 함">
+            <label for="study05">사전 학습 안 함</label>
+          </div>
+        </div>
+      </div>
+      <div class="textarea_wrap required">
+        <p class="textarea_tit">
+          4. 개선을 바라는 사항이 있다면 자유롭게 기재해 주십시오. 
+          <span class="essential">(필수)</span>
+          <span class="hide_txt">*필수응답 항목입니다.</span>
+        </p>
+        <div class="textarea_group">
+          <textarea placeholder="개선점을 기재해주세요."></textarea>
+        </div>
+      </div>
+      <div class="btn_wrap">
+        <button type="button" class="btn_line">뒤로가기</button>
+        <button type="button" class="btn_blue btn_save">저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : 교육만족도조사 제출 모달 -->
+<div id="educationSubmitModal" class="modal">
+  <!-- 알림 모달 경우 modal_info 클래스 필요 -->
+  <div class="modal_content modal_info">
+    <div class="info_wrap">
+      <div class="img_wrap">
+        <img src="/assets/images/modal/ic_question.svg" alt="">
+      </div>
+      <p class="info_desc">
+        교육만족도조사를 제출하시겠습니까?
+      </p>
+    </div>
+    <div class="btn_wrap">
+      <button type="button" class="btn_close btn_gray">아니오</button>
+      <button type="button" class="btn_blue">예</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal : Test Type Question 모달 -->
+<div id="testTypeQuestionModal" class="modal">
+  <div class="modal_content">
+    <button type="button" class="btn_close"></button>
+    <p class="tit">Question</p>
+    <p class="txt">What type of food does the customer ask the waiter about?</p>
+  </div>
+</div>
+
+<!-- Modal : Test Type Answer 모달 -->
+<div id="testTypeAnswerModal" class="modal">
+  <div class="modal_content">
+    <button type="button" class="btn_close"></button>
+    <p class="tit">Sample Answer</p>
+    <div class="answer_total_wrap">
+      <div class="answer_box basic">
+        <div class="tit_wrap">
+          <div class="sub_tit">
+            <p>Basic</p>
+            <p>Lv.4+</p>
+          </div>
+          <button type="button" class="btn_play btn_pasue"></button>
+        </div>
+        <p class="txt">
+          Lorem ipsum dolor sit amet, consectetur 
+          adipiscing elit. Duis dignissim ipsum eget 
+          pharetra vulputate. Phasellus sodales odio et 
+          purus faucibus egestas. Pellentesque 
+          condimentum est quis nunc interdum, nec 
+          auctor velit porta. Fusce varius non ligula in
+          vehicula. Mauris a ligula ut risus auctor 
+          fermentum eu sit amet leo. Integer finibus 
+        </p>
+      </div>
+      <div class="answer_box advanced">
+        <div class="tit_wrap">
+          <div class="sub_tit">
+            <p>Advanced</p>
+            <p>Lv.5/5+</p>
+          </div>
+          <button type="button" class="btn_play"></button>
+        </div>
+        <p class="txt">
+          Lorem ipsum dolor sit amet, consectetur 
+          adipiscing elit. Duis dignissim ipsum eget 
+          pharetra vulputate<br><br>
+  
+          Lorem ipsum dolor sit amet, consectetur 
+          adipiscing elit. Duis dignissim ipsum eget 
+          pharetra vulputate. Phasellus sodales odio et 
+          purus faucibus egestas. Pellentesque 
+          condimentum est quis nunc interdum, nec 
+          auctor velit porta. Fusce varius non ligula in
+          vehicula. Mauris a ligula ut risus auctor 
+          fermentum eu sit amet leo. Integer finibus 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

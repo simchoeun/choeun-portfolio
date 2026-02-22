@@ -1,0 +1,384 @@
+/* 강사단 헤더 */
+#teachersHeader {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 30.6rem;
+  height: 100vh;
+  background-color: $white;
+  box-shadow: 0 0.4rem 3.2rem 0.2rem rgba(0, 0, 0, 0.04);
+  .content_wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 5rem;
+    .logo_wrap {
+      flex-shrink: 0;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 3rem 1.4rem;
+      border-bottom: 0.1rem solid #f6f6f6;
+      .btn_toggle {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        background: url(../../assets/images/teachers/header/ic_arrow.svg)
+          no-repeat center/cover;
+      }
+      .logo {
+        width: 8.7rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .btn_menu {
+      display: none;
+    }
+    .all_nav_wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      nav {
+        flex-shrink: 0;
+        padding: 1.5rem 2.4rem 1.5rem 2rem;
+        .nav_wrap {
+          > li {
+            .btn_depth1 {
+              display: flex;
+              gap: 0.8rem;
+              // height: 4.7rem;
+              padding: 1.4rem 0;
+              font-size: 1.6rem;
+              font-weight: $semiBold;
+              letter-spacing: -0.02em;
+              .ic_wrap {
+                flex-shrink: 0;
+                display: block;
+                width: 1.6rem;
+                height: 1.6rem;
+              }
+              .ic_arrow {
+                display: block;
+                width: 1.4rem;
+                height: 1.4rem;
+                margin-top: 0.3rem;
+                margin-left: auto;
+                background: url(../../assets/images/teachers/header/ic_down.svg)
+                  no-repeat center/cover;
+              }
+              &.my_class {
+                .ic_wrap {
+                  background: url(../../assets/images/teachers/header/ic_class.svg)
+                    no-repeat center/cover;
+                }
+              }
+              &.performance {
+                .ic_wrap {
+                  background: url(../../assets/images/teachers/header/ic_performace.svg)
+                    no-repeat center/cover;
+                }
+              }
+              &.management {
+                .ic_wrap {
+                  background: url(../../assets/images/teachers/header/ic_management.svg)
+                    no-repeat center/cover;
+                }
+              }
+              &.messenger {
+                .ic_wrap {
+                  background: url(../../assets/images/teachers/header/ic_messenger.svg)
+                    no-repeat center/cover;
+                }
+              }
+              &.active {
+                .ic_arrow {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+            .depth2_wrap {
+              display: none;
+              padding-left: 2.2rem;
+              &.active {
+                display: block;
+              }
+              li {
+                .btn_depth2 {
+                  display: flex;
+                  align-items: center;
+                  width: 100%;
+                  height: 4rem;
+                  padding: 0 1.2rem;
+                  border-radius: 1rem;
+                  font-size: 1.4rem;
+                  font-weight: $medium;
+                  color: #6a6a6a;
+                  &.active {
+                    background-color: #fafafa;
+                    font-weight: $semiBold;
+                    color: $point;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .sub_nav_wrap {
+        margin-top: auto;
+        padding: 0 1.4rem 0 0.6rem;
+        li {
+          .btn_sub {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            height: 4.6rem;
+            padding: 0 1rem;
+            font-size: 1.6rem;
+            font-weight: $semiBold;
+            color: #999999;
+            .ic_wrap {
+              display: block;
+              width: 2.6rem;
+              height: 2.6rem;
+            }
+            &.my_info {
+              .ic_wrap {
+                background: url(../images/teachers/header/ic_myinfo.svg) no-repeat
+                  center/cover;
+              }
+              &.active {
+                color: $point;
+                .ic_wrap {
+                  background-image: url(../images/teachers/header/ic_myinfo_active.svg);
+                }
+              }
+            }
+            &.settings {
+              .ic_wrap {
+                background: url(../images/teachers/header/ic_settings.svg)
+                  no-repeat center/cover;
+              }
+            }
+            &.logout {
+              .ic_wrap {
+                background: url(../images/teachers/header/ic_logout.svg) no-repeat
+                  center/cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.close {
+    width: 5.8rem;
+    .content_wrap {
+      .logo_wrap {
+        .btn_toggle {
+          transform: scaleX(-1);
+        }
+        .logo {
+          display: none;
+        }
+      }
+      .all_nav_wrap {
+        nav {
+          .nav_wrap {
+            > li {
+              .btn_depth1 {
+                .txt {
+                  display: none;
+                }
+                .ic_arrow {
+                  display: none;
+                }
+              }
+              .depth2_wrap {
+                display: none;
+              }
+            }
+          }
+        }
+        .sub_nav_wrap {
+          li {
+            .btn_sub {
+              .txt {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    ~ .teachers {
+      padding-left: 5.8rem;
+    }
+    &.hover {
+      width: 30.6rem;
+      .content_wrap {
+        .logo_wrap {
+          .logo {
+            display: block;
+          }
+        }
+        .all_nav_wrap {
+          nav {
+            .nav_wrap {
+              > li {
+                .btn_depth1 {
+                  .txt {
+                    display: block;
+                  }
+                  .ic_arrow {
+                    display: block;
+                  }
+                }
+                .depth2_wrap {
+                  display: none;
+                  &.active {
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+          .sub_nav_wrap {
+            li {
+              .btn_sub {
+                .txt {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1280px) {
+    width: 24.6rem;
+    .content_wrap {
+      padding-bottom: 3rem;
+      .all_nav_wrap {
+        nav {
+          padding: 1.6rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    overflow: visible;
+    width: 100%;
+    height: 6.2rem;
+    box-shadow: none;
+    .content_wrap {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      .logo_wrap {
+        padding: 0;
+        border-bottom: 0;
+        .btn_toggle {
+          display: none;
+        }
+      }
+      .btn_menu {
+        display: flex;
+        gap: 0.3rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 2.4rem;
+        height: 2.4rem;
+        span {
+          display: block;
+          width: 1.8rem;
+          height: 0.2rem;
+          background-color: $black;
+          transition: all 0.3s ease-in-out;
+        }
+        &.active {
+          span {
+            &:nth-child(1) {
+              transform: translateY(0.3rem) rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: translateY(-0.7rem) rotate(-45deg);
+            }
+          }
+        }
+      }
+      .all_nav_wrap {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        transition: all 0.3s ease-in-out;
+        width: 81.5%;
+        height: calc(var(--vh, 1vh) * 100);
+        background-color: $white;
+        padding-top: 7.1rem;
+        &.active {
+          right: 0;
+        }
+        nav {
+          padding: 0 2.4rem;
+          .nav_wrap {
+            > li {
+              .depth2_wrap {
+                padding-left: 2rem;
+              }
+            }
+          }
+        }
+        .sub_nav_wrap {
+          position: relative;
+          padding: 6rem 2rem 4rem;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 3rem;
+            left: 2rem;
+            width: calc(100% - 4rem);
+            height: 0.1rem;
+            background-color: #EDEDED;
+          }
+          li {
+            ~ li {
+              margin-top: 2rem;
+            }
+            .btn_sub {
+              height: 2.6rem;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+    &.active {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba($color: $black, $alpha: 0.27);
+      }
+    }
+  }
+}

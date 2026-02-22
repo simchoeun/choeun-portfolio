@@ -1,0 +1,311 @@
+#airDry {
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: opacity 0.4s ease; 
+  width: 100%;
+  height: 100%;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 92rem;
+    background-color: $black;
+  }
+  &::before {
+    content: '';
+    opacity: 0.8;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100rem;
+    background: linear-gradient(180deg, #000000 0%, #1D1D1D 100%);
+  }
+  .airdry_wrap {
+    display: flex;
+    gap: 5rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 20rem;
+    .airdry_box {
+      overflow: hidden;
+      pointer-events: none;
+      transform: translateY(20%);
+      opacity: 0;
+      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+      width: 88rem;
+      height: 142rem;
+      padding: 5rem 5rem 0;
+      background-color: rgba($color: #F9F9F9, $alpha: 0.9);
+      box-shadow: 0 0.4rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+      backdrop-filter: blur(3rem);
+      border-radius: 6rem;
+      .btn_back {
+        display: flex;
+        align-items: center;
+        font-size: 2.8rem;
+        font-weight: $medium;
+        color: $black;
+        &::before {
+          content: '';
+          display: block;
+          width: 7rem;
+          height: 7rem;
+          background: url(../images/main/ic_back.svg) no-repeat center/cover;
+          filter: invert(1);
+        }
+      }
+      .tit {
+        position: relative;
+        width: max-content;
+        margin: 2rem auto 3rem;
+        font-family: $font-PlusJakartaSans;
+        font-size: 10rem;
+        font-weight: $semiBold;
+        background: linear-gradient(90deg, #3C3C3C 0%, #000000 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .airdry_status {
+        display: flex;
+        gap: 0.4rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 2.8rem;
+        font-weight: $semiBold;
+        color: #353535;
+        .point_txt {
+          color: #0F93FF;
+        }
+        &::before {
+          content: '';
+          display: block;
+          width: 3.2rem;
+          height: 3.2rem;
+          margin-right: 0.6rem;
+          animation: spin 1.2s linear infinite;
+          background: url(../images/main/ic_spin_air.svg) no-repeat center/cover;
+        }
+        &.has_off {
+          &::before {
+            display: none;
+          }
+          .point_txt {
+            color: #353535;
+          }
+        }
+      }
+      .airdry_img {
+        position: relative;
+        width: 68rem;
+        height: 68rem;
+        margin: -7rem auto -1rem;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          &.off {
+            opacity: 0;
+            transition: opacity 0.4s;
+            animation: none;
+          }
+        }
+        &.has_off {
+          img {
+            opacity: 1;
+          }
+        }
+        &.is_on {
+          img {
+            &.on {
+              animation: spin 2s linear infinite;
+            }
+          }
+        }
+      }
+      .airdry_btn_wrap {
+        display: flex;
+        gap: 10.7rem;
+        justify-content: center;
+        .btn_mode {
+          display: flex;
+          gap: 2.7rem;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          width: 5.9rem;
+          &::before {
+            content: '';
+            transition: all 0.4s;
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 1rem;
+            height: 1rem;
+            background-color: #E6E6E6;
+            box-shadow: 0 0.2rem 0.4rem 0 rgba($color: $black, $alpha: 0.25) inset;
+            border-radius: 50%;
+          }
+          &::after {
+            opacity: 0;
+            transition: all 0.4s;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 16rem;
+            height: 16rem;
+            background-color: #D3EBFF;
+            filter: blur(10rem);
+            border-radius: 50%;
+          }
+          .txt {
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s;
+            font-size: 3rem;
+            font-weight: $semiBold;
+            color: #A8A8A8;
+          }
+          &.active {
+            &::before {
+              background-color: #0F93FF;
+            }
+            &::after {
+              opacity: 1;
+            }
+            .txt {
+              color: #0F93FF;
+            }
+          }
+        }
+        &.has_off {
+          .btn_mode {
+            pointer-events: none;
+          }
+        }
+      }
+      .humidity_btn_wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 11rem;
+        padding-right: 5rem;
+        .humidity_txt_box {
+          width: 16.2rem;
+          padding-top: 1.8rem;
+          text-align: center;
+          .humidity_txt {
+            font-size: 2.8rem;
+            font-weight: $semiBold;
+            color: rgba($color: $black, $alpha: 0.5);
+          }
+          .humidity_num {
+            font-family: $font-PlusJakartaSans;
+            font-size: 6rem;
+            line-height: 13.5rem;
+            letter-spacing: -0.03em;
+            background: linear-gradient(90deg, #3C3C3C 0%, #000000 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+          }
+        }
+        .btn_airdry_power {
+          display: block;
+          transition: all 0.4s;
+          width: 21rem;
+          height: 21.25rem;
+          margin: 0 4rem 0 7rem;
+          background: url(../images/main/ic_power_active_air.png) no-repeat center/cover;
+          &.off {
+            background: url(../images/main/ic_power_air.png) no-repeat center/cover;
+          }
+        }
+        .humidity_btn_box {
+          display: flex;
+          gap: 1rem;
+          flex-direction: column;
+          .btn_up,
+          .btn_down {
+            overflow: hidden;
+            display: block;
+            position: relative;
+            width: 19rem;
+            height: 8rem;
+            border-radius: 14rem;
+            box-shadow: 0.6rem 1rem 2rem 0 rgba(58, 96, 112, 0.22);
+            &::before {
+              pointer-events: none;
+              content: '';
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: -1;
+              border-radius: 14rem;
+              box-shadow: -1rem -1rem 2rem 0 rgba(245, 246, 252, 1);
+            }
+            .ic_arrow {
+              display: block;
+              width: 100%;
+              height: 100%;
+              background: $white url(../images/main/airdry_arrow.svg) no-repeat center;
+            }
+          }
+          .btn_down {
+            .ic_arrow {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+    .btn_close {
+      transition: all 0.2s;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      background: $white url(../images/main/ic_close.svg) no-repeat center;
+      box-shadow: 0 1rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+      backdrop-filter: blur(7rem);
+      &:active {
+        transform: scale(1.1) rotate(45deg);
+        background: $white url(../images/main/ic_close_gray.svg) no-repeat center;
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+    .airdry_wrap {
+      .airdry_box {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

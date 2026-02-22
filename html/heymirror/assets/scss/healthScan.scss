@@ -1,0 +1,555 @@
+#healthScan {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transform: translateX(100%);
+  transition: transform 0.8s ease; 
+  width: 100%;
+  height: calc(100% - 12rem);
+  background-color: $black;
+  .top_wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    padding: 5rem 5rem 0 4rem;
+    .btn_back {
+      display: flex;
+      align-items: center;
+      font-size: 2.8rem;
+      font-weight: $medium;
+      color: $white;
+      &::before {
+        content: '';
+        display: block;
+        width: 7rem;
+        height: 7rem;
+        background: url(../images/main/ic_back.svg) no-repeat center/cover;
+      }
+    }
+    .btn_close {
+      transition: all 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 8rem;
+      height: 8rem;
+      background: $white url(../images/main/ic_close.svg) no-repeat center;
+      backdrop-filter: blur(7rem);
+      box-shadow: 0 1rem 2rem 0 rgba($color: $black, $alpha: 0.25);
+      border-radius: 50%;
+      &:active {
+        transform: scale(1.1) rotate(45deg);
+        background: $white url(../images/main/ic_close_gray.svg) no-repeat center;
+      }
+    }
+  }
+  .scanning_wrap {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    .scanning_img_wrap {
+      overflow: hidden;
+      position: relative;
+      height: 120rem;
+      border-radius: 6rem 6rem 0 0;
+      .gradient_box {
+        pointer-events: none;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #1F1F1F 0%, rgba(31, 31, 31, 0) 50%, #1F1F1F 100%);
+      }
+      .img_wrap {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .scan_box {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 25.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 78rem;
+        height: 62.6rem;
+        .center {
+          position: absolute;
+          top: 32.8rem;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 4rem;
+          height: 4rem;
+          background: url(../images/main/ic_plus.svg) no-repeat center/cover;
+        }
+        .left,
+        .right {
+          flex-shrink: 0;
+          width: 6.6rem;
+          height: 100%;
+          background: url(../images/main/healthscan_deco.png) no-repeat center/cover;
+        }
+        .right {
+          transform: scaleX(-1);
+        }
+        .line {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -45%);
+          width: 72.4rem;
+          height: 23.2rem;
+        }
+      }
+      .txt_box {
+        display: flex;
+        gap: 3rem;
+        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        bottom: 6rem;
+        transform: translateX(-50%);
+        .health_scan_tit {
+          position: relative;
+          width: max-content;
+          margin: 0 auto;
+          padding-right: 3rem;
+          font-family: $font-PlusJakartaSans;
+          font-size: 5.5rem;
+          font-weight: $medium;
+          text-transform: capitalize;
+          .sub_tit {
+            position: absolute;
+            top: -0.8rem;
+            right: 0;
+            font-size: 2rem;
+            font-weight: $regular;
+          }
+        }
+        .scan_info {
+          display: flex;
+          gap: 1.6rem;
+          align-items: center;
+          width: max-content;
+          height: 6.6rem;
+          padding: 0 3rem;
+          background-color: rgba($color: #25273D, $alpha: 0.7);
+          border: 0.1rem solid #8689CA;
+          border-radius: 5rem;
+          font-size: 2.2rem;
+          font-weight: $medium;
+          color: $white;
+          &::after {
+            content: '';
+            display: block;
+            animation: spin 1.2s linear infinite;
+            width: 2rem;
+            height: 2rem;
+            background: url(../images/main/ic_spin_healthscan.svg) no-repeat center/cover;
+          }
+        }
+      }
+    }
+    .scanning_txt_wrap {
+      padding: 7rem 4rem 0;
+      background-color: $black;
+      @keyframes scanningOpacity {
+        0%, 100% {
+          color: rgba($color: $white, $alpha: 1);
+        }
+        50% {
+          color: rgba($color: $white, $alpha: 0.6);
+        }
+      }
+      .scanning_txt {
+        margin-bottom: 6.2rem;
+        font-size: 3.2rem;
+        font-weight: $medium;
+        animation: scanningOpacity 1s ease-in-out infinite;
+        color: rgba($color: $white, $alpha: 1);
+        text-align: center;
+      }
+      .scanning_num_list {
+        display: flex;
+        gap: 4.4rem 2rem;
+        flex-wrap: wrap;
+        li {
+          width: calc((100% - 4rem) / 3);
+          height: 16.6rem;
+          text-align: center;
+          .scanning_tit {
+            display: flex;
+            gap: 0.4rem;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            width: 100%;
+            height: 6rem;
+            margin-bottom: 3rem;
+            background-color: #121212;
+            border-radius: 6rem;
+            font-size: 2.4rem;
+            font-weight: $medium;
+            letter-spacing: -0.02em;
+            &::before {
+              content: '';
+              display: block;
+              width: 2.9rem;
+              height: 2.9rem;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              background-image: url(../images/main/ic_fever_healthscan.svg);
+            }
+            &.fever {
+              &::before {
+                background-image: url(../images/main/ic_fever_healthscan.svg);
+              }
+            }
+            &.oxygen {
+              &::before {
+                background-image: url(../images/main/ic_oxygen_healthscan.svg);
+              }
+            }
+            &.heartrate {
+              &::before {
+                background-image: url(../images/main/ic_heartrate_healthscan.svg);
+              }
+            }
+            &.vitality_rest {
+              &::before {
+                background-image: url(../images/main/ic_vitality_rest_healthscan.svg);
+              }
+            }
+            &.stress {
+              &::before {
+                background-image: url(../images/main/ic_stress_healthscan.svg);
+              }
+            }
+            &.vitality_strength {
+              &::before {
+                background-image: url(../images/main/ic_vitality_strength_healthscan.svg);
+              }
+            }
+          }
+          .scanning_num {
+            position: relative;
+            width: 100%;
+            height: 6rem;
+            font-family: $font-PlusJakartaSans;
+            font-size: 6rem;
+            text-align: center;
+            .scanning_before {
+              transition: all 0.2s;
+              color: rgba($color: $white, $alpha: 0.3);
+            }
+            .scanning_after {
+              opacity: 0;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              text-align: center;
+            }
+          }
+          &.active {
+            .scanning_tit {
+              background-color: #686FFF;
+            }
+            .scanning_num {
+              .scanning_before {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .scanning_complete_wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12rem 4rem 0;
+    .tit_box {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      width: 13.6rem;
+      height: 6.8rem;
+      margin: 0 auto;
+      .tit {
+        font-family: $font-PlusJakartaSans;
+        font-size: 5.5rem;
+        font-weight: $medium;
+        text-transform: capitalize;
+        .sub_tit {
+          position: absolute;
+          top: -0.4rem;
+          right: 0;
+          font-size: 2rem;
+          font-weight: $regular;
+        }
+      }
+    }
+    .complete_box {
+      display: flex;
+      gap: 5.6rem;
+      margin-bottom: 8rem;
+      padding-left: 8rem;
+      .profile_wrap {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 18.1rem;
+        height: 18.1rem;
+        .profile {
+          overflow: hidden;
+          display: block;
+          width: 15.7rem;
+          height: 15.7rem;
+          border-radius: 50%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          &::before {
+            pointer-events: none;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 18.1rem;
+            height: 18.1rem;
+            border: 0.4rem solid $white;
+            border-radius: 50%;
+          }
+          &::after {
+            pointer-events: none;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 1.4rem;
+            right: 1.2rem;
+            width: 3rem;
+            height: 3rem;
+            background-color: #35cb32;
+            border: 0.6rem solid $black;
+            border-radius: 50%;
+          }
+        }
+        .scanning_img_box {
+          overflow: hidden;
+          position: absolute;
+          left: -2rem;
+          bottom: -2.8rem;
+          width: 8rem;
+          height: 8rem;
+          border-radius: 50%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .complete_txt_box {
+        .name {
+          margin-bottom: 1.9rem;
+          font-size: 3.2rem;
+          font-weight: $semiBold;
+        }
+        .complete_tit {
+          margin-bottom: 1.9rem;
+          font-size: 2rem;
+          font-weight: $semiBold;
+        }
+        .complete_detail {
+          font-size: 2.4rem;
+          font-weight: $light;
+          line-height: 3.6rem;
+          letter-spacing: -0.02em;
+          word-break: keep-all;
+        }
+      }
+    }
+    .complete_num_list {
+      display: flex;
+      gap: 6.3rem 2rem;
+      flex-wrap: wrap;
+      li {
+        width: calc((100% - 4rem) / 3);
+        height: 14.7rem;
+        text-align: center;
+        .complete_tit {
+          display: flex;
+          gap: 0.4rem;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 6rem;
+          margin-bottom: 3rem;
+          background-color: #121212;
+          border-radius: 6rem;
+          font-size: 2.2rem;
+          font-weight: $medium;
+          letter-spacing: -0.02em;
+          &::before {
+            content: '';
+            display: block;
+            width: 2.6rem;
+            height: 2.6rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: url(../images/main/ic_fever_healthscan.svg);
+          }
+          &.fever {
+            &::before {
+              background-image: url(../images/main/ic_fever_healthscan.svg);
+            }
+          }
+          &.oxygen {
+            &::before {
+              background-image: url(../images/main/ic_oxygen_healthscan.svg);
+            }
+          }
+          &.heartrate {
+            &::before {
+              background-image: url(../images/main/ic_heartrate_healthscan.svg);
+            }
+          }
+          &.vitality_rest {
+            &::before {
+              background-image: url(../images/main/ic_vitality_rest_healthscan.svg);
+            }
+          }
+          &.stress {
+            &::before {
+              background-image: url(../images/main/ic_stress_healthscan.svg);
+            }
+          }
+          &.vitality_strength {
+            &::before {
+              background-image: url(../images/main/ic_vitality_strength_healthscan.svg);
+            }
+          }
+        }
+        .complete_num {
+          width: 100%;
+          height: 5.7rem;
+          font-size: 4.8rem;
+          letter-spacing: -0.02em;
+          text-align: center;
+        }
+      }
+    }
+    .hexagon_wrap {
+      position: relative;
+      margin-top: 15.5rem;
+      .hexagon_box {
+        position: relative;
+        width: 62rem;
+        height: 62rem;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .hexagon_data {
+          position: absolute;
+          top: 44%;
+          left: 55%;
+          transform: translate(-50%, -50%);
+          width: 30rem;
+          height: 27.15rem;
+        }
+      }
+      .hexagon_data_list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 62rem;
+        height: 62rem;
+        li {
+          position: absolute;
+          .data {
+            margin-bottom: 0.6rem;
+            font-size: 2.8rem;
+            font-weight: $medium;
+            letter-spacing: -0.02em;
+            color: #686FFF;
+            &.color_skyblue {
+              color: #36C6FF;
+            }
+          }
+          .data_tit {
+            font-size: 1.8rem;
+            font-weight: $medium;
+            letter-spacing: -0.02em;
+            color: rgba($color: $white, $alpha: 0.5);
+          }
+          &.fever {
+            top: -3.7rem;
+            left: 10.7rem;
+            text-align: right;
+          }
+          &.heartrate {
+            top: -3.7rem;
+            right: 10.7rem;
+          }
+          &.oxygen {
+            top: 50%;
+            right: -11rem;
+            transform: translateY(-50%);
+          }
+          &.stress {
+            bottom: -4.5rem;
+            right: 5.5rem;
+          }
+          &.vitality_rest {
+            bottom: -4.5rem;
+            left: 5.5rem;
+            text-align: right;
+          }
+          &.vitality_strength {
+            top: 50%;
+            left: -12.8rem;
+            transform: translateY(-50%);
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    transform: translateX(0%);
+  }
+}

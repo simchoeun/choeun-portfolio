@@ -1,0 +1,121 @@
+#menubar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: 12rem;
+  background-color: $black;
+  transform: translateY(0);
+  transition: all 0.4s ease-out 0.2s;
+  .content_wrap {
+    display: flex;
+    padding: 4rem;
+    justify-content: space-between;
+    .btn_broadcast,
+    .btn_setting,
+    .empty {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .empty {
+      pointer-events: none;
+    }
+    .btn_broadcast {
+      background-image: url(../images/common/ic_broadcast.svg);
+    }
+    .btn_setting {
+      transition:  all 0.4s;
+      position: relative;
+      background-image: url(../images/common/ic_setting.svg);
+      &:active {
+        background-image: url(../images/common/ic_setting_active.svg);
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: -1;
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          background-color: #1E1E1E;
+          backdrop-filter: blur(7rem);
+          box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+    .btn_list {
+      display: flex;
+      gap: 6rem;
+      align-items: center;
+      button {
+        display: block;
+        transition:  all 0.4s;
+        width: 4rem;
+        height: 4rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &.btn_calendar {
+          background-image: url(../images/common/ic_calendar.svg);
+        }
+        &.btn_home {
+          background-image: url(../images/common/ic_home.svg);
+        }
+        &.btn_widget {
+          background-image: url(../images/common/ic_widget.svg);
+        }
+      }
+    }
+  }
+
+  &.has_calendar {
+    background-color: $white;
+    transition: all 0.4s ease-out 0.4s;
+    .content_wrap {
+      .btn_setting {
+        background-image: url(../images/common/ic_setting_black.svg);
+        transition: all 0.2s;
+        &:active {
+          background-image: url(../images/common/ic_setting_black_active.svg);
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: $white;
+            backdrop-filter: blur(7rem);
+            box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.12);
+          }
+        }
+      }
+      .btn_list {
+        button {
+          &.btn_calendar {
+            background-image: url(../images/common/ic_calendar_black.svg);
+          }
+          &.btn_home {
+            background-image: url(../images/common/ic_home_gray.svg);
+          }
+          &.btn_widget {
+            background-image: url(../images/common/ic_widget_gray.svg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,482 @@
+<div class="top_wrap">
+  <p class="top_tit">일정</p>
+  <button type="button" class="btn_more"></button>
+  <button type="button" class="btn_close"></button>
+</div>
+<div class="tab_all_btn_wrap">
+  <div class="tab_indicator"></div>
+  <button class="btn_all_tab active" data-tab="allTab1"></button>
+  <button class="btn_all_tab" data-tab="allTab2"></button>
+</div>
+<div class="topbar">
+  <p class="ym" id="currentYM">2025년 9월</p>
+  <div class="action_btn_wrap">
+    <button class="btn_today" id="goToday">오늘</button>
+    <button class="btn_arrow" id="goPrev"></button>
+    <button class="btn_arrow" id="goNext"></button>
+  </div>
+</div>
+<div class="tab_contents">
+  <div class="tab_all_content active" id="allTab1">
+    <!-- 캘린더 부분 -->
+    <div class="panel">
+      <div id="calendar"></div>
+    </div>
+    <!-- 메모 부분 -->
+    <div class="memo_bar panel">
+      <div class="memo_head">
+        <div class="label">메모 목록</div>
+      </div>
+      <div class="swiper" id="memoSwiper">
+        <div class="swiper-wrapper"></div>
+      </div>
+    </div>
+    <!-- 캘린더 이벤트 데이터 -->
+    <ul id="events" hidden>
+      <li data-title="F1 심야영화 보러가기" data-date="2025-10-05" data-color="#007F18"></li>
+      <li data-title="TV 방문설치" data-date="2025-10-10" data-color="#FFA600"></li>
+      <li data-title="요가" data-date="2025-10-10" data-color="#E82E2E"></li>
+      <li data-title="요가" data-date="2025-10-17" data-color="#E82E2E"></li>
+      <li data-title="요가" data-date="2025-11-01" data-color="#E82E2E"></li>
+    </ul>
+    <!-- 날짜별 메모 템플릿 -->
+    <div id="memoTemplates" hidden>
+      <!-- 2025-09-05 -->
+      <template data-date="2025-10-05">
+        <div class="swiper-slide">
+          <div class="memo_card bg_green">
+            <div class="from_wrap">
+              From. <p class="from_name">수민</p>
+              <p class="news_message">새 메세지</p>
+            </div>
+            <p class="message">나 오늘 민지랑 영화 약속 있어서 좀 늦게 들어갈것 같아 이따가 학교 끝나면 전화할게!</p>
+            <div class="time_wrap">
+              <div class="time_box">
+                <p class="date">2025.09.01</p>
+                <p class="time">AM 10:09</p>
+              </div>
+              <div class="profile">
+                <img src="../assets/images/main/ic_calendar_profile01.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="memo_card bg_blue">
+            <div class="from_wrap">
+              From. <p class="from_name">엄마</p>
+              <p class="news_message">새 메세지</p>
+            </div>
+            <p class="message">냉장고에 요거트 있으니까 집에 도착하면 꺼내먹어~</p>
+            <div class="time_wrap">
+              <div class="time_box">
+                <p class="date">2025.09.01</p>
+                <p class="time">AM 10:09</p>
+              </div>
+              <div class="profile">
+                <img src="../assets/images/main/ic_calendar_profile02.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="memo_card bg_pink">
+            <div class="from_wrap">
+              From. <p class="from_name">엄마</p>
+              <!-- <p class="news_message">새 메세지</p> -->
+            </div>
+            <p class="message">
+              오늘 마트에서 사올것 <br>
+              소고기 국거리 <br>
+              돼지고기 다짐육 <br>
+              미역 1봉지 <br>
+              당면 세척당근 <br>
+              시금치 피망, 양파
+            </p>
+            <div class="time_wrap">
+              <div class="time_box">
+                <p class="date">2025.09.01</p>
+                <p class="time">AM 10:09</p>
+              </div>
+              <div class="profile">
+                <img src="../assets/images/main/ic_calendar_profile02.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="memo_card bg_yellow">
+            <div class="from_wrap">
+              From. <p class="from_name">엄마</p>
+              <!-- <p class="news_message">새 메세지</p> -->
+            </div>
+            <p class="message">
+              오늘 마트에서 사올것 <br>
+              소고기 국거리 <br>
+              돼지고기 다짐육 <br>
+              미역 1봉지 <br>
+              당면 세척당근 <br>
+              시금치 피망, 양파
+            </p>
+            <div class="time_wrap">
+              <div class="time_box">
+                <p class="date">2025.09.01</p>
+                <p class="time">AM 10:09</p>
+              </div>
+              <div class="profile">
+                <img src="../assets/images/main/ic_calendar_profile02.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="memo_card bg_orange">
+            <div class="from_wrap">
+              From. <p class="from_name">아빠</p>
+              <!-- <p class="news_message">새 메세지</p> -->
+            </div>
+            <p class="message">오늘 회식있어요</p>
+            <div class="time_wrap">
+              <div class="time_box">
+                <p class="date">2025.09.01</p>
+                <p class="time">AM 10:09</p>
+              </div>
+              <div class="profile">
+                <img src="../assets/images/main/ic_calendar_profile04.png" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+  <div class="tab_all_content" id="allTab2">
+    <div class="detail_day_box">
+      <div class="detail_day_list">
+        <div class="detail_day_item today">
+          <button class="day active">9월 5일<span class="today_txt">오늘</span></button>
+          <div class="detail_list">
+            <p class="detail_txt green">F1 심야영화 보러가기</p>
+          </div>
+        </div>
+        <div class="detail_day_item">
+          <button class="day">9월 10일</button>
+          <div class="detail_list">
+            <p class="detail_txt yellow">TV 방문설치</p>
+            <p class="detail_txt red">요가</p>
+          </div>
+        </div>
+        <div class="detail_day_item">
+          <button class="day">9월 17일</button>
+          <div class="detail_list">
+            <p class="detail_txt red">요가</p>
+          </div>
+        </div>
+        <div class="detail_day_item">
+          <button class="day">9월 24일</button>
+          <div class="detail_list">
+            <p class="detail_txt red">요가</p>
+          </div>
+        </div>
+      </div>
+      <div class="detail_memo_list" id="memoList">
+        <div class="memo_card bg_green">
+          <div class="from_wrap">
+            From. <p class="from_name">수민</p>
+            <p class="news_message">새 메세지</p>
+          </div>
+          <p class="message">나 오늘 민지랑 영화 약속 있어서 좀 늦게 들어갈것 같아 이따가 학교 끝나면 전화할게!</p>
+          <div class="time_wrap">
+            <div class="time_box">
+              <p class="date">2025.09.01</p>
+              <p class="time">AM 10:09</p>
+            </div>
+            <div class="profile">
+              <img src="../assets/images/main/ic_calendar_profile01.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="memo_card bg_blue">
+          <div class="from_wrap">
+            From. <p class="from_name">엄마</p>
+            <p class="news_message">새 메세지</p>
+          </div>
+          <p class="message">냉장고에 요거트 있으니까 집에 도착하면 꺼내먹어~</p>
+          <div class="time_wrap">
+            <div class="time_box">
+              <p class="date">2025.09.01</p>
+              <p class="time">AM 10:09</p>
+            </div>
+            <div class="profile">
+              <img src="../assets/images/main/ic_calendar_profile02.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="memo_card bg_pink">
+          <div class="from_wrap">
+            From. <p class="from_name">엄마</p>
+            <!-- <p class="news_message">새 메세지</p> -->
+          </div>
+          <p class="message">
+            오늘 마트에서 사올것 <br>
+            소고기 국거리 <br>
+            돼지고기 다짐육 <br>
+            미역 1봉지 <br>
+            당면 세척당근 <br>
+            시금치 피망, 양파
+          </p>
+          <div class="time_wrap">
+            <div class="time_box">
+              <p class="date">2025.09.01</p>
+              <p class="time">AM 10:09</p>
+            </div>
+            <div class="profile">
+              <img src="../assets/images/main/ic_calendar_profile02.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="memo_card bg_yellow">
+          <div class="from_wrap">
+            From. <p class="from_name">엄마</p>
+            <!-- <p class="news_message">새 메세지</p> -->
+          </div>
+          <p class="message">
+            오늘 마트에서 사올것 <br>
+            소고기 국거리 <br>
+            돼지고기 다짐육 <br>
+            미역 1봉지 <br>
+            당면 세척당근 <br>
+            시금치 피망, 양파
+          </p>
+          <div class="time_wrap">
+            <div class="time_box">
+              <p class="date">2025.09.01</p>
+              <p class="time">AM 10:09</p>
+            </div>
+            <div class="profile">
+              <img src="/assets/images/main/ic_calendar_profile02.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="memo_card bg_orange">
+          <div class="from_wrap">
+            From. <p class="from_name">아빠</p>
+            <!-- <p class="news_message">새 메세지</p> -->
+          </div>
+          <p class="message">오늘 회식있어요</p>
+          <div class="time_wrap">
+            <div class="time_box">
+              <p class="date">2025.09.01</p>
+              <p class="time">AM 10:09</p>
+            </div>
+            <div class="profile">
+              <img src="../assets/images/main/ic_calendar_profile04.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  /* calendarWrap 버튼 (뒤로가기) */
+  const calendarTopWrap = () => {
+    const calendarWrap = document.getElementById('calendarWrap');
+    const menubar = document.getElementById('menubar');
+    const mainEl = document.querySelector('main') || document.getElementById('mainPage'); 
+    if (!calendarWrap) return;
+
+    const backBtn = calendarWrap.querySelector('.btn_close');
+
+    const removeActiveClass = () => {
+      setTimeout(() => {
+        if (calendarWrap.classList.contains('active')) {
+          calendarWrap.classList.remove('active');
+        }
+        if (menubar && menubar.classList.contains('has_calendar')) {
+          menubar.classList.remove('has_calendar');
+        }
+        if (mainEl) {
+          mainEl.classList.remove('slice_calendar');
+        }
+      }, 100); 
+    };
+
+    if (backBtn) {
+      backBtn.addEventListener('click', removeActiveClass);
+    }
+  };
+  calendarTopWrap();
+
+
+  /* 버튼 탭 (달력/메모목록) */
+  const allTabWrap = () => {
+    const tabButtons = document.querySelectorAll('.tab_all_btn_wrap .btn_all_tab');
+    const tabContents = document.querySelectorAll('.tab_all_content');
+    const indicator = document.querySelector('.tab_all_btn_wrap .tab_indicator');
+
+    let activeIndex = 0;
+
+    const updateContents = () => {
+      tabContents.forEach((content, i) => {
+        const offset = (i - activeIndex) * 100;
+        content.style.transform = `translateX(${offset}%)`;
+        content.style.opacity = i === activeIndex ? 1 : 0;
+      });
+    };
+
+    tabButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        activeIndex = index;
+
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        indicator.style.transform = `translateX(${index * 100}%)`;
+
+        updateContents();
+      });
+    });
+
+    updateContents();
+  };
+  allTabWrap();
+
+  /* 캘린더 & 메모 스와이퍼 */
+  const calendarSwiperWrap = () => {
+    const calendarEl = document.getElementById('calendar');
+    if (!calendarEl) return;
+    if (calendarEl.dataset.inited === '1') return;
+    calendarEl.dataset.inited = '1';
+
+    const pad  = (n) => String(n).padStart(2, '0');
+    const toKey = (d) => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+    // ── HTML → events 변환 ────────────────────────────────
+    const readEventsFromHTML = () =>
+      [...document.querySelectorAll('#events li')].map(li => ({
+        id: li.dataset.id,
+        title: li.dataset.title,
+        start: li.dataset.date,
+        backgroundColor: li.dataset.color,
+      }));
+
+    // ── FullCalendar ─────────────────────────────────────
+    const fc = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      locale: 'ko',
+      headerToolbar: false,
+      events: readEventsFromHTML(),
+      dayCellContent: (arg) => ({ html: arg.date.getDate() }),
+      dateClick: (info) => setSelectedDate(new Date(info.date)),
+      eventClick: (info) => setSelectedDate(new Date(info.event.start)),
+
+      // 🔹 event 색상 지정 (.fc-event-title-container)
+      eventDidMount: (info) => {
+        const color = info.event.backgroundColor;
+        const container = info.el.querySelector('.fc-event-title-container');
+        if (color && container) {
+          container.style.setProperty('--dot-color', color);
+        }
+      },
+    });
+
+    fc.render();
+    calendarEl._fc = fc;
+
+    // ──────────────────────────────────────────────
+    // 🔹 날짜별 메모 개수 → .memo_num 생성
+    // ──────────────────────────────────────────────
+    const markMemoDays = () => {
+      // 날짜별 메모 템플릿 찾기
+      const memoTemplates = document.querySelectorAll('#memoTemplates template');
+      const memoMap = new Map();
+
+      // 날짜별 개수 계산
+      memoTemplates.forEach(tpl => {
+        const date = tpl.dataset.date;
+        const slides = tpl.content.querySelectorAll('.swiper-slide').length;
+        memoMap.set(date, slides);
+      });
+
+      // 모든 캘린더 셀 순회
+      document.querySelectorAll('.fc-daygrid-day-frame').forEach(frame => {
+        const dateAttr = frame.closest('.fc-daygrid-day')?.dataset.date;
+        frame.classList.remove('has_memo');
+        frame.querySelector('.memo_num')?.remove(); // 기존 memo_num 제거
+
+        if (dateAttr && memoMap.has(dateAttr)) {
+          const count = memoMap.get(dateAttr);
+          frame.classList.add('has_memo');
+
+          // memo_num 엘리먼트 생성
+          const numDiv = document.createElement('div');
+          numDiv.className = 'memo_num';
+          numDiv.textContent = count;
+          frame.appendChild(numDiv);
+        }
+      });
+    };
+
+    // 초기 렌더 후 바로 실행
+    markMemoDays();
+
+    // ── 연/월 표시 업데이트 ─────────────────────────────
+    const ymEl = document.getElementById('currentYM');
+    const formatYM = (d) => `${d.getFullYear()}년 ${d.getMonth()+1}월`;
+    const updateYM = () => { if (ymEl) ymEl.textContent = formatYM(fc.getDate()); };
+    fc.setOption('datesSet', () => { updateYM(); markMemoDays(); });
+    updateYM();
+
+    // ── 네비게이션 버튼 ─────────────────────────────────
+    const btnPrev  = document.getElementById('goPrev');
+    const btnNext  = document.getElementById('goNext');
+    const btnToday = document.getElementById('goToday');
+
+    btnPrev && btnPrev.addEventListener('click',  () => { fc.prev();  updateYM(); markMemoDays(); });
+    btnNext && btnNext.addEventListener('click',  () => { fc.next();  updateYM(); markMemoDays(); });
+    btnToday && btnToday.addEventListener('click', () => { fc.today(); updateYM(); markMemoDays(); setSelectedDate(new Date()); });
+
+    // ── 하단 메모 스와이프 ───────────────────────────────
+    let memoSwiper = null;
+    const swiperWrapper = document.querySelector('#memoSwiper .swiper-wrapper');
+    const memoDateEl    = document.getElementById('memoDate');
+
+    const ensureSwiper = () => (
+      memoSwiper ??= new Swiper('#memoSwiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        slidesPerGroup: 1,
+      })
+    );
+
+    const renderMemosFromTemplate = (dateKey) => {
+      if (memoDateEl) memoDateEl.textContent = dateKey.replaceAll('-', '.');
+      const tpl = document.querySelector(`#memoTemplates template[data-date="${dateKey}"]`);
+
+      if (!tpl) {
+        if (swiperWrapper) swiperWrapper.innerHTML = '';
+        memoSwiper?.update();
+        return;
+      }
+
+      if (swiperWrapper) swiperWrapper.innerHTML = tpl.innerHTML;
+
+      const sw = ensureSwiper();
+      sw.update();
+      sw.slideTo(0, 0);
+    };
+
+    const setSelectedDate = (dateObj) => renderMemosFromTemplate(toKey(dateObj));
+
+    // 초기 선택 날짜 렌더
+    (() => {
+      const todayKey = toKey(new Date());
+      const firstTpl = document.querySelector('#memoTemplates template');
+      renderMemosFromTemplate(firstTpl?.dataset.date ?? todayKey);
+    })();
+  };
+  calendarSwiperWrap();
+</script>
